@@ -33,31 +33,41 @@ function LoginFormPage() {
 
   return (
     <>
-      <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
-        <label>
-          Username or Email
-          <input
-            type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Log In</button>
-      </form>
+      <div id="sign-in-page">
+        <h1 id="sign-in-title-text"> SIGN IN</h1>
+        <div id="sign-in-box">
+          <div id="sign-in-form-container">
+            <form onSubmit={handleSubmit} className={'sign-in-form'}>
+              <ul>
+                {errors.map(error => <li key={error}>{error}</li>)}
+              </ul>
+              <div className="account-sign-in-input-container">
+              <label id="account-name-label">
+                SIGN IN WITH ACCOUNT NAME
+                <input
+                  type="text"
+                  value={credential}
+                  onChange={(e) => setCredential(e.target.value)}
+                  required
+                />
+              </label>
+              </div>
+              <div className="password-sign-in-input-container">
+              <label id="password-name-label">
+                PASSWORD
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+              </div>
+              <button type="submit">Sign in</button>
+          </form>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
