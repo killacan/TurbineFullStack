@@ -33,7 +33,7 @@ function LoginFormPage() {
 
   const demoLogin = (e) => {
     e.preventDefault();
-    console.log("demo login");
+    // console.log("demo login");
     return dispatch(sessionActions.login({ credential: "Demo-lition", password: "password" }))
       .catch(async (res) => {
         let data;
