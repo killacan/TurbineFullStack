@@ -111,6 +111,7 @@ function SignupFormPage() {
               />
           </label>
         <button onClick={handleSubmit}>Continue</button>
+        <button onClick={(e) => setFormPage(1)}>Back</button>
         </form>
         </div>
       </>
