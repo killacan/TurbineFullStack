@@ -9,11 +9,17 @@ function App() {
     <>
       <Navigation />
         <Switch>
+          <Route exact path="/" >
+            <h1>Home</h1>
+          </Route>
           <Route path="/login" >
             <LoginFormPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="*">
+            <h1>404</h1>
           </Route>
         </Switch>
     </>

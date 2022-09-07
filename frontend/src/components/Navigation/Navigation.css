@@ -23,9 +23,12 @@ a {
   justify-content: end;
 }
 
-#sign-in-holder a {
-  border-right: 1px;
-
+#login-link {
+  border-color: lightgray;
+  border-right-width: 1px;
+  border-right-style: solid;
+  padding-right: 10px;
+  font-size: 11px;
 }
 
 #sign-in-title-text {

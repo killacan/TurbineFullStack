@@ -16,9 +16,9 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <NavLink to='/login' >Login</NavLink>
+        <NavLink to='/login' ><span id='login-link'>Login</span></NavLink>
         {/* <LoginFormPage /> */}
-        <NavLink to="/signup">Sign Up</NavLink>
+        <NavLink to="/signup"><span>Sign Up</span></NavLink>
       </>
     );
   }
