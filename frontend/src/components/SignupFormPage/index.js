@@ -21,7 +21,7 @@ function SignupFormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(email, confirmEmail, username, password, confirmPassword);
-    if (password === confirmPassword) {
+    if (password === confirmPassword && email === confirmEmail) {
       setErrors([]);
       return dispatch(sessionActions.signup({ email, username, password }))
         .catch(async (res) => {
@@ -37,6 +37,7 @@ function SignupFormPage() {
         else setErrors([res.statusText]);
       });
     }
+    if (email != confirmEmail) return setErrors(['Confirm Email field must be the same as the Email field'])
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
@@ -77,6 +78,9 @@ function SignupFormPage() {
     ) : (
       <>
         <div id="sign-up-page">
+        <ul>
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
         <h1>CREATE YOUR ACCOUNT</h1>
           <form id="create-form">
         <label>
