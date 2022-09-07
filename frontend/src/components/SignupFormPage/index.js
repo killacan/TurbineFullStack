@@ -8,15 +8,19 @@ function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
+  const [confirmEmail, setConfirmEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [formPage, setFormPage] = useState(1);
+
 
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(email, confirmEmail, username, password, confirmPassword);
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(sessionActions.signup({ email, username, password }))
@@ -37,15 +41,18 @@ function SignupFormPage() {
   };
 
   return (
+    (formPage === 1) ? (
     <>
       <div id="sign-up-page">
-        <h1>Sign Up</h1>
-        <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error) => <li key={error}>{error}</li>)}
-          </ul>
+        
+        <ul>
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        <h1>CREATE YOUR ACCOUNT</h1>
+        <form onSubmit={handleSubmit} id="create-form">
+          
           <label>
-            Email
+            Email Address
             <input
               type="text"
               value={email}
@@ -54,6 +61,25 @@ function SignupFormPage() {
             />
           </label>
           <label>
+            Confirm your Address
+            <input
+              type="text"
+              value={confirmEmail}
+              onChange={(e) => setConfirmEmail(e.target.value)}
+              required
+            />
+          </label>
+          
+          <button onClick={(e) => setFormPage(2)}>Continue</button>
+        </form>
+      </div>
+    </>
+    ) : (
+      <>
+        <div id="sign-up-page">
+        <h1>CREATE YOUR ACCOUNT</h1>
+          <form id="create-form">
+        <label>
             Username
             <input
               type="text"
@@ -64,27 +90,29 @@ function SignupFormPage() {
           </label>
           <label>
             Password
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
           </label>
           <label>
             Confirm Password
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
           </label>
-          <button type="submit">Sign Up</button>
+        <button onClick={handleSubmit}>Continue</button>
         </form>
-      </div>
-    </>
+        </div>
+      </>
+    )
   );
 }
 
 export default SignupFormPage;
+

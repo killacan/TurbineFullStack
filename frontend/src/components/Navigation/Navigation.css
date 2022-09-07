@@ -2,6 +2,11 @@
   position: absolute;
 }
 
+a {
+  text-decoration: none;
+  color: lightgrey;
+}
+
 .navigation-holder {
   display: grid;
   grid-template-columns: 1fr 150px 640px 200px 1fr;
@@ -16,6 +21,17 @@
   display: flex;
   grid-column: 4;
   justify-content: end;
+}
+
+#sign-in-holder a {
+  border-right: 1px;
+
+}
+
+#sign-in-title-text {
+  display: flex;
+  align-items: end;
+  padding-bottom: 20px;
 }
 
 .navigation-holder ul {

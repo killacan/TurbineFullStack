@@ -1,4 +1,37 @@
 #sign-up-page {
-    display: grid;
-    grid-column: 2;
+    display: flex;
+    grid-column: 2 / 4;
+    flex-direction: column;
+}
+
+#sign-up-page > form {
+    display: flex;
+    flex-direction: column;
+}
+
+#create-form {
+    width: 250px;
+}
+
+#create-form input {
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(77, 77, 77);
+    border: none;
+    color: white;
+}
+
+#create-form label {
+    padding: 10px;
+}
+
+#create-form button {
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    padding: 0;
+    border: none;
+    margin: 10px;
 }
