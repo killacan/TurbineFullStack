@@ -8,7 +8,7 @@
 #sign-in-box {
     display: flex;
     width: 640px;
-    height: 300px;
+    height: 340px;
     flex-direction: column;
     background-color: #171a21;
     padding-left: 30px;
@@ -24,7 +24,7 @@
 #sign-in-form-container {
     display: flex;
     width: 420px;
-    height: 280px;
+    height: 300px;
 }
 
 /* #sign-in-form > form {
@@ -65,6 +65,7 @@
     background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
     padding: 0;
     border: none;
+    margin: 10px;
 }
 
 .sign-in-form input {

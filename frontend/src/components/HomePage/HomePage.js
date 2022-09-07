@@ -3,7 +3,7 @@ function HomePage () {
         <>
             <div className="home-page-container">
                 <div className="top-bar">
-
+                    
                 </div>
                 <div className="titleImage">
 
