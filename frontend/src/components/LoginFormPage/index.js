@@ -31,6 +31,24 @@ function LoginFormPage() {
       });
   };
 
+  const demoLogin = (e) => {
+    e.preventDefault();
+    console.log("demo login");
+    return dispatch(sessionActions.login({ credential: "Demo-lition", password: "password" }))
+      .catch(async (res) => {
+        let data;
+        try {
+          // .clone() essentially allows you to read the response body twice
+          data = await res.clone().json();
+        } catch {
+          data = await res.text(); // Will hit this case if, e.g., server is down
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
+  }
+
   return (
     <>
       <div id="sign-in-page">
@@ -64,6 +82,7 @@ function LoginFormPage() {
               </label>
               </div>
               <button type="submit">Sign in</button>
+              <button onClick={demoLogin}>Demo Login</button>
           </form>
           </div>
         </div>
