@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
+import searchIcon from "../../assets/searchDarkBlue.png";
 
 function MiniNavBar () {
+
+    
     return (
         <>
             <div className="mini-nav-container">
@@ -28,6 +31,9 @@ function MiniNavBar () {
                     </div>
                     <div className="search-bar">
                         <input type="text" placeholder="Search" />
+                        <div className="search-icon-holder">
+                            <img id="search-icon" src={searchIcon} />
+                        </div>
                     </div>
                 </div>
             </div>

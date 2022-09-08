@@ -6,7 +6,7 @@
 #root {
     display: grid;
     grid-template-columns: 1fr 150px 640px 200px 1fr;
-    grid-template-rows: 100px 80px 660px 1fr;
+    grid-template-rows: 100px 80px 900px 1fr;
     /* display: flex; */
 }
 
