@@ -4,6 +4,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
+import MiniNavBar from "./components/MiniNavBar";
 
 function App() {
   return (
