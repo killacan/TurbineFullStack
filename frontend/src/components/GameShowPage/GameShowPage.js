@@ -15,12 +15,6 @@ const GameShowPage = () => {
         dispatch(fetchGame(gameId));
     }, [gameId]);
     
-
-
-    console.log(gameData);
-    console.log(gameData, "game");
-
-
     if (!gameData) return null
 
     return (
