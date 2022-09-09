@@ -43,11 +43,7 @@ function Navigation() {
         </ul>
       </div>
       <div id='sign-in-holder'>
-        <ul>
-          <li>
-            {sessionLinks}
-          </li>
-        </ul>
+        {sessionLinks}
       </div>
     </div>
   );

@@ -6,23 +6,8 @@ import rightArrow from "../../assets/rightArrow.png"
 function HomePage () {
     
     const [currentFeatured, setCurrentFeatured] = useState(0);
-
-
-    // function NumGo () {
-    //     let leftArrowClick = document.getElementById("left-arrow");
-    //     let rightArrowClick = document.getElementById("right-arrow");
-    //     let num = 1;
-    //     leftArrowClick.addEventListener("click", function() {
-    //         num = (num - 1) % 5; 
-    //         console.log(num)
-    //     });
-
-    //     rightArrowClick.addEventListener("click", function() {
-    //         num = (num + 1) % 5;
-    //         console.log(num)
-    //     });
-
-    // }
+    const [featuredProducts, setFeaturedProducts] = useState([]);
+    const [specialOffers, setSpecialOffers] = useState([]);
 
     return (
         <>
@@ -57,7 +42,19 @@ function HomePage () {
                     </div>
 
                     <div className="special-offers-holder">
-                    
+                        <div className="special-page-1">
+
+                        </div>
+                        <div className="special-page-2">
+
+                        </div>
+                        <div className="special-page-3">
+
+                        </div>
+
+                        <div className="special-page-4">
+
+                        </div>
                     </div>
 
                     <div className="right-special-offers-arrow">

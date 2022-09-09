@@ -5,6 +5,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import NavBottomBar from "./components/NavBottomBar";
+import GameShowPage from "./components/GameShowPage";
+import UserShowPage from "./components/UserShowPage";
 
 function App() {
   return (
@@ -19,6 +21,12 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path={`/games/:gameId`}>
+            <GameShowPage />
+          </Route>
+          <Route path={`/users/:userId`}>
+            <UserShowPage />
           </Route>
           <Route path="*">
             <h1>404</h1>

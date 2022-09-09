@@ -1,5 +1,14 @@
-.profile-dropdown {
-  position: absolute;
+.profile-container {
+    display: grid;
+    flex-direction: column;
+
+}
+
+.profile-button {
+  margin: 5px;
+  width: 35px;
+  height: 35px;
+  background-color: lightgray;
 }
 
 a {

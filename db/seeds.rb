@@ -23,6 +23,17 @@ ApplicationRecord.transaction do
     password: 'password'
   )
 
+  User.create!(
+    username: 'Tatoo Tim',
+    email: 'TimtheTatMan@gmail.com',
+    password: 'password'
+  )
+
+  User.create!(
+    username: 'Llama Jim',
+    email: 'llamatime@gmail.com',
+    password: 'password'
+  )
   # More users
   # 10.times do 
   #   User.create!({
