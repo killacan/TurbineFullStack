@@ -1,7 +1,13 @@
 .profile-container {
     display: grid;
     flex-direction: column;
+}
 
+.profile-dropdown {
+
+  li {
+    color: lightgrey;
+  }
 }
 
 .profile-button {

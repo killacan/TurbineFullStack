@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import MiniNavBar from "../MiniNavBar";
 import NavBottomBar from "../NavBottomBar";
+import { useEffect } from "react";
 
 
 function GameShowPage () {
@@ -11,7 +12,7 @@ function GameShowPage () {
     useEffect(() => {
 
     }, []);
-    
+
     return (
         <>
             <MiniNavBar />

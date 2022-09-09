@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 // import LoginFormPage from './LoginFormPage';
-import './Navigation.css';
+import './Navigation.scss';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
