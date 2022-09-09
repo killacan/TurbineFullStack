@@ -1,27 +1,27 @@
-
+import csrfFetch from "./csrf"
 
 export const RECEIVE_GAMES = 'games/RECEIVE_GAMES'
 export const RECEIVE_GAME = 'games/RECEIVE_GAME'
 export const REMOVE_GAME = 'games/REMOVE_GAME'
 
-export const receieveGames = state => {
+export const getGames = state => {
     if (!state.games) return [];
     return Object.values(state.games);
 }
 
-export const receiveGame = gameId => state => {
+export const getGame = gameId => state => {
     if (!state.games) return null;
     return state.games[gameId];
 }
 
 export const fetchGames = () => async dispatch => {
-    const res = await fetch('/api/games');
+    const res = await csrfFetch('/api/games');
     const games = await res.json();
     dispatch({ type: RECEIVE_GAMES, games });
 }
 
 export const fetchGame = gameId => async dispatch => {
-    const res = await fetch(`/api/games/${gameId}`);
+    const res = await csrfFetch(`/api/games/${gameId}`);
     const game = await res.json();
     dispatch({ type: RECEIVE_GAME, game });
 }
@@ -61,7 +61,7 @@ const gameReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_GAMES:
-            newState = {...state, ...action.games};
+            newState = {...newState, ...action.games};
             return newState;
         case RECEIVE_GAME:
             newState[action.game.id] = action.game;

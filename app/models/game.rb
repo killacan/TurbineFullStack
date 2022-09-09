@@ -7,5 +7,6 @@ class Game < ApplicationRecord
     belongs_to :uploader,
         foreign_key: :uploader_id,
         class_name: :User
-        
+    
+    has_one_attached :image
 end

@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :username, 
     uniqueness: true, 
-    length: { in: 3..30 }, 
+    length: { in: 3..40 }, 
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
   validates :email, 
     uniqueness: true, 

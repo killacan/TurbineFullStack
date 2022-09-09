@@ -1,12 +1,23 @@
 import MiniNavBar from "../MiniNavBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import leftArrow from "../../assets/leftArrow.png"
 import rightArrow from "../../assets/rightArrow.png"
+import { useDispatch, useSelector } from "react-redux";
+import { fetchGames, getGames } from "../../store/games";
 
 function HomePage () {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchGames());
+    }, []);
+
+    const games = useSelector(getGames);
+    console.log(games);
     
     const [currentFeatured, setCurrentFeatured] = useState(0);
     const [featuredProducts, setFeaturedProducts] = useState([]);
+    const [currentSpecialOffers, setCurrentSpecialOffers] = useState(0);
     const [specialOffers, setSpecialOffers] = useState([]);
 
     return (
@@ -36,28 +47,61 @@ function HomePage () {
                         <button className="special-offers-button">BROWSE MORE</button>
                     </div>
                     <div className="left-special-offers-arrow-holder">
-                        <div className="left-special-offers-arrow">
+                        <div className="left-special-offers-arrow" onClick={() => setCurrentSpecialOffers((currentSpecialOffers + 1) % 3)}>
                             <img className="arrows" src={leftArrow} />
                         </div>
                     </div>
 
                     <div className="special-offers-holder">
+                        <p>{currentSpecialOffers}</p>
                         <div className="special-page-1">
+                            <div className="sp1-1">
+                            
+                            </div>
+                            <div className="sp1-2">
 
+                            </div>
+                            <div className="sp1-3">
+                            
+                            </div>
+                            <div className="sp1-4">
+
+                            </div>
                         </div>
                         <div className="special-page-2">
+                            <div className="sp2-1">
+                            
+                            </div>
+                            <div className="sp2-2">
 
+                            </div>
+                            <div className="sp2-3">
+                            
+                            </div>
                         </div>
                         <div className="special-page-3">
+                            <div className="sp3-1">
+                            
+                            </div>
+                            <div className="sp3-2">
 
-                        </div>
+                            </div>
+                            <div className="sp3-3">
+                            
+                            </div>
+                            <div className="sp3-4">
 
-                        <div className="special-page-4">
+                            </div>
+                            <div className="sp3-5">
+                            
+                            </div>
+                            <div className="sp3-6">
 
+                            </div>
                         </div>
                     </div>
 
-                    <div className="right-special-offers-arrow">
+                    <div className="right-special-offers-arrow" onClick={() => setCurrentSpecialOffers(((currentSpecialOffers - 1) + 3) % 3)}>
                         <img className="arrows" src={rightArrow} />
                     </div>
                 </div>

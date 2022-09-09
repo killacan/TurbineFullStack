@@ -1,17 +1,27 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import MiniNavBar from "../MiniNavBar";
-import NavBottomBar from "../NavBottomBar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { fetchGame, getGame } from "../../store/games";
 
 
-function GameShowPage () {
+const GameShowPage = () => {
     const dispatch = useDispatch();
     const { gameId } = useParams();
 
+    const gameData = useSelector(getGame(gameId));
+    
     useEffect(() => {
+        dispatch(fetchGame(gameId));
+    }, [gameId]);
+    
 
-    }, []);
+
+    console.log(gameData);
+    console.log(gameData, "game");
+
+
+    if (!gameData) return null
 
     return (
         <>
@@ -23,7 +33,7 @@ function GameShowPage () {
                             <h2>media</h2>
                         </div>
                         <div className="game-show-page-title-details">
-                            <h2>details</h2>
+                            <p>{gameData.description}</p>
                         </div>
 
                         <div className="game-show-page-media-scrolly">
