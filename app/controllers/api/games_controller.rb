@@ -2,12 +2,12 @@ class Api::GamesController < ApplicationController
 
     def index 
         @games = Game.all
-        render json: @games
+        # render json: @games
     end
 
     def show
         @game = Game.find(params[:id])
-        render json: @game
+        # render json: @game
     end
 
     def create
@@ -19,6 +19,6 @@ class Api::GamesController < ApplicationController
     private
 
     def game_params
-        params.require(:game).permit(:name, :description, :uploader_id)
+        params.require(:game).permit(:name, :description, :uploader_id, images: [])
     end
 end

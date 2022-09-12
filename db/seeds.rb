@@ -1,3 +1,5 @@
+require 'open-uri'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -17,6 +19,12 @@ ApplicationRecord.transaction do
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
+
+
+  
+
+
+
   User.create!(
     username: 'Demo-lition', 
     email: 'demo@user.io', 
@@ -75,11 +83,15 @@ ApplicationRecord.transaction do
 
 puts "creating games"
 
-  Game.create!(
+  game1 = Game.create!(
     name: 'Cult of the Lamb',
     description: 'Start your own cult in a land of false prophets, venturing out into diverse and mysterious regions to build a loyal community of woodland Followers and spread your Word to become the one true cult.',
     uploader_id: 3
   )
+
+  file = URI.open('https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/lamb2.jpg')
+
+  game1.images.attach(io: file, filename: 'lamb2.jpg')
 
   Game.create!(
     name: 'Eastward',
