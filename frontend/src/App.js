@@ -8,6 +8,8 @@ import NavBottomBar from "./components/NavBottomBar";
 import GameShowPage from "./components/GameShowPage";
 import UserShowPage from "./components/UserShowPage";
 import ScrollToTop from "./components/ScrollToTop";
+import Cart from "./components/Cart"
+
 
 function App() {
   return (
@@ -31,6 +33,10 @@ function App() {
           <Route path={`/users/:userId`}>
             <ScrollToTop />
             <UserShowPage />
+          </Route>
+          <Route path={`/cart`}>
+            <ScrollToTop />
+            <Cart />
           </Route>
           <Route path="*">
             <h1>404</h1>

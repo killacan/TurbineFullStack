@@ -26,9 +26,19 @@ function HomePage () {
         setSpecialOffers(games.slice(5))
     },[games]);
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     if (document.getElementsByClassName("mini-img")) {
+    //         console.log(document.getElementById("mini-img-1"), "whats up doc")
+    //         hover(document.getElementsByClassName("mini-img"));
+    //     }
 
-    }, [mainFeatured]);
+    // }, [mainFeatured]);
+
+    // function hover(element) {
+    //     element.addEventListener("mouseenter", e => setMainFeatured(e.target.value));
+    //     element.addEventListener("mouseleave", e => setMainFeatured(0));
+    // }
+
 
     // console.log(specialOffers, specialOffers[1], "featured");
     
@@ -49,10 +59,10 @@ function HomePage () {
                             <h2 className="featured-text">{featuredProducts[currentFeatured].name}</h2>
                             <img className="featured-img" src={featuredProducts[currentFeatured].photoUrls[mainFeatured]} />
                             <div className="mini-featured-scrolly-images">
-                                <button value={1} ><img className="mini-img-1" src={featuredProducts[currentFeatured].photoUrls[1]} /></button>
-                                <button value={2} ><img className="mini-img-2" src={featuredProducts[currentFeatured].photoUrls[2]} /></button>
-                                <button value={3} ><img className="mini-img-3" src={featuredProducts[currentFeatured].photoUrls[3]} /></button>
-                                <button value={4} ><img className="mini-img-4" src={featuredProducts[currentFeatured].photoUrls[4]} /></button>
+                                <button value={1} ><img className="mini-img" id="mini-img-1" src={featuredProducts[currentFeatured].photoUrls[1]} /></button>
+                                <button value={2} ><img className="mini-img" id="mini-img-2" src={featuredProducts[currentFeatured].photoUrls[2]} /></button>
+                                <button value={3} ><img className="mini-img" id="mini-img-3" src={featuredProducts[currentFeatured].photoUrls[3]} /></button>
+                                <button value={4} ><img className="mini-img" id="mini-img-4" src={featuredProducts[currentFeatured].photoUrls[4]} /></button>
                             </div>
                         </div>
                     </NavLink>

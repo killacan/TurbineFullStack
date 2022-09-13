@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import MiniNavBar from "../MiniNavBar";
 import { useEffect, useState } from "react";
 import { fetchGame, getGame } from "../../store/games";
@@ -55,7 +55,7 @@ const GameShowPage = () => {
 
                     <div className="buy-button-container">
                             <div className="buy-button1-container">
-                                <button className="buy-button">Add to Cart</button>
+                                <NavLink to={`/cart`}> <button className="buy-button">Add to Cart</button></NavLink>
                             </div>
 
                             <div className="buy-button2-container">
