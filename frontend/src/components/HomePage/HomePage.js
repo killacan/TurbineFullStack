@@ -41,7 +41,14 @@ function HomePage () {
                     </div>
                     <NavLink id="featured-link" to={`/games/${featuredProducts[currentFeatured].id}`}>
                         <div className="featured-scrolly-container">
-                            <p>{ featuredProducts[currentFeatured].name }</p>
+                            <h2 className="featured-text">{featuredProducts[currentFeatured].name}</h2>
+                            <img className="featured-img" src={featuredProducts[currentFeatured].photoUrls[0]} />
+                            <div className="mini-featured-scrolly-images">
+                                <img className="mini-img-1" src={featuredProducts[currentFeatured].photoUrls[1]} />
+                                <img className="mini-img-2" src={featuredProducts[currentFeatured].photoUrls[2]} />
+                                <img className="mini-img-3" src={featuredProducts[currentFeatured].photoUrls[3]} />
+                                <img className="mini-img-4" src={featuredProducts[currentFeatured].photoUrls[4]} />
+                            </div>
                         </div>
                     </NavLink>
                     <div className="right-scrolly-arrow" onClick={() => setCurrentFeatured(((currentFeatured + 1) % 5))}>
@@ -66,18 +73,18 @@ function HomePage () {
                     {currentSpecialOffers === 0 && 
                         <div className="special-page-1">
                             <NavLink className="sp1-1" id="special-offers-link" to={`/games/${specialOffers[1].id}`}>
-                            <div >
-
+                            <div className="box1-1">
+                                <img src={specialOffers[1].photoUrls[0]} />
                             </div>
                             </NavLink>
                             <NavLink className="sp1-2" id="special-offers-link" to={`/games/${specialOffers[2].id}`}>
-                            <div >
-
+                            <div className="box1-2">
+                                <img src={specialOffers[2].photoUrls[0]} />
                             </div>
                             </NavLink>
                             <NavLink className="sp1-3" id="special-offers-link" to={`/games/${specialOffers[3].id}`}>
-                            <div >
-                            
+                            <div className="box1-3">
+                                <img src={specialOffers[3].photoUrls[0]} />
                             </div>
                             </NavLink>
                             

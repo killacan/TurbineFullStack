@@ -24,16 +24,17 @@ const GameShowPage = () => {
                     {/* <h1>{game.title}</h1> */}
                     <div className="game-show-page-title-content">
                         <div className="game-show-page-media-container">
-                            <h2>media</h2>
+                            <img src={gameData.photoUrls[1]} />
                         </div>
                         <div className="game-show-page-title-details">
+                            <img src={gameData.photoUrls[0]} />
                             <p>{gameData.description}</p>
                         </div>
 
                         <div className="game-show-page-media-scrolly">
-                            <h2>scrolly box with extra text in order to check and see if my overflow is working the way that it is supposed to
-                                but idk if I am going to be able to fill out enough text to make it scroll.
-                            </h2>
+                            {gameData.photoUrls.map (photo => (
+                                <img className="mini-scrolly-imgs" src={photo} />
+                            ))}
                         </div> 
                     </div>
                     <div className="game-show-page-reviews-container">

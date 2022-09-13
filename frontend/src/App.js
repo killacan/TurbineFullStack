@@ -7,13 +7,15 @@ import HomePage from "./components/HomePage";
 import NavBottomBar from "./components/NavBottomBar";
 import GameShowPage from "./components/GameShowPage";
 import UserShowPage from "./components/UserShowPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
       <Navigation />
-        <Switch>
+        <Switch >
           <Route exact path="/" >
+            <ScrollToTop />
             <HomePage />
           </Route>
           <Route path="/login" >
@@ -23,9 +25,11 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route path={`/games/:gameId`}>
+            <ScrollToTop />
             <GameShowPage />
           </Route>
           <Route path={`/users/:userId`}>
+            <ScrollToTop />
             <UserShowPage />
           </Route>
           <Route path="*">

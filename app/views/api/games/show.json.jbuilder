@@ -1,2 +1,2 @@
 json.extract! @game, :id, :name, :description, :uploader_id
-json.photoUrl url_for(@game.images)
+json.photoUrls @game.images.map {|image| image.url}
