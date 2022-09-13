@@ -9,7 +9,7 @@ function MiniNavBar () {
             <div className="mini-nav-container">
                 <div className="mini-nav-bar">
                     <ul className="mini-nav-options-list">
-                        <li className="mini-dropdown1"><span>Your Store</span></li>
+                        <NavLink to="/" ><li className="mini-dropdown1"><span>Your Store</span></li></NavLink>
                             {/* <div className="mini-dropdown-content1">
                                 <NavLink to="/">Home</NavLink>
                                 <NavLink to="/">Community Recommendations</NavLink>

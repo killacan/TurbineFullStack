@@ -1,4 +1,4 @@
 import MiniNavBar from './MiniNavBar';
-import './MiniNavBar.css';
+import './MiniNavBar.scss';
 
 export default MiniNavBar;

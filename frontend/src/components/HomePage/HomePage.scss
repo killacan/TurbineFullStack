@@ -88,7 +88,7 @@
 .featured-scrolly-container {
     display: grid;
     grid-template-columns: 63% 18% 19%;
-    grid-template-rows: 20% 20% 20% 1fr;
+    grid-template-rows: 20% 25% 25% 1fr;
     grid-column: 2;
     grid-row: 1;
     height: 100%;
@@ -124,6 +124,11 @@
             grid-row: 1;
             height: 100%;
             width: 100%;
+            filter: brightness(0.7);
+        }
+
+        .mini-img-1:hover {
+            filter: brightness(1);
         }
 
         .mini-img-2 {
@@ -131,6 +136,11 @@
             grid-row: 1;
             height: 100%;
             width: 100%;
+            filter: brightness(0.7);
+        }
+
+        .mini-img-2:hover {
+            filter: brightness(1);
         }
 
         .mini-img-3 {
@@ -138,6 +148,11 @@
             grid-row: 2;
             height: 100%;
             width: 100%;
+            filter: brightness(0.7);
+        }
+
+        .mini-img-3:hover {
+            filter: brightness(1);
         }
 
         .mini-img-4 {
@@ -145,6 +160,11 @@
             grid-row: 2;
             height: 100%;
             width: 100%;
+            filter: brightness(0.7);
+        }
+
+        .mini-img-4:hover {
+            filter: brightness(1);
         }
     }
 }

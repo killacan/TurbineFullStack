@@ -19,11 +19,16 @@ function HomePage () {
     const [featuredProducts, setFeaturedProducts] = useState([]);
     const [currentSpecialOffers, setCurrentSpecialOffers] = useState(0);
     const [specialOffers, setSpecialOffers] = useState([]);
+    const [mainFeatured, setMainFeatured] = useState(0);
     
     useEffect(() => {
         setFeaturedProducts(games.slice(0, 5));
         setSpecialOffers(games.slice(5))
     },[games]);
+
+    useEffect(() => {
+
+    }, [mainFeatured]);
 
     // console.log(specialOffers, specialOffers[1], "featured");
     
@@ -42,12 +47,12 @@ function HomePage () {
                     <NavLink id="featured-link" to={`/games/${featuredProducts[currentFeatured].id}`}>
                         <div className="featured-scrolly-container">
                             <h2 className="featured-text">{featuredProducts[currentFeatured].name}</h2>
-                            <img className="featured-img" src={featuredProducts[currentFeatured].photoUrls[0]} />
+                            <img className="featured-img" src={featuredProducts[currentFeatured].photoUrls[mainFeatured]} />
                             <div className="mini-featured-scrolly-images">
-                                <img className="mini-img-1" src={featuredProducts[currentFeatured].photoUrls[1]} />
-                                <img className="mini-img-2" src={featuredProducts[currentFeatured].photoUrls[2]} />
-                                <img className="mini-img-3" src={featuredProducts[currentFeatured].photoUrls[3]} />
-                                <img className="mini-img-4" src={featuredProducts[currentFeatured].photoUrls[4]} />
+                                <button value={1} ><img className="mini-img-1" src={featuredProducts[currentFeatured].photoUrls[1]} /></button>
+                                <button value={2} ><img className="mini-img-2" src={featuredProducts[currentFeatured].photoUrls[2]} /></button>
+                                <button value={3} ><img className="mini-img-3" src={featuredProducts[currentFeatured].photoUrls[3]} /></button>
+                                <button value={4} ><img className="mini-img-4" src={featuredProducts[currentFeatured].photoUrls[4]} /></button>
                             </div>
                         </div>
                     </NavLink>
