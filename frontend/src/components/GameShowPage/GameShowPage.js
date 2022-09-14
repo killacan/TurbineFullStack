@@ -13,10 +13,10 @@ const GameShowPage = () => {
 
     const gameData = useSelector(getGame(gameId));
     const reviews = useSelector(getReviews);
-
+    
     const sessionUser = useSelector(state => state.session.user);
     // console.log(sessionUser);
-
+    
     useEffect(() => {
         dispatch(fetchGame(gameId));
     }, [gameId]);
@@ -47,13 +47,13 @@ const GameShowPage = () => {
                             <p>{gameData.description}</p>
                         </div>
 
-                        <div className="game-show-page-media-scrolly">
+                        {/* <div className="game-show-page-media-scrolly">
                             {gameData.photoUrls.slice(1).map ((photo, idx) => (
                                 <button value={idx + 1} className="mini-scrolly-image-container" onClick={(e) => setCurrentImage(e.target.value)}>
                                     <img className={`mini-scrolly-imgs`} id={`mini-scrolly-imgs${idx}`} src={photo} />
                                 </button>
                             ))}
-                        </div> 
+                        </div>  */}
                     </div>
                     <div className="game-show-page-buttons">
                     
@@ -79,7 +79,7 @@ const GameShowPage = () => {
                     </div>
                     
                     <div className="game-show-page-reviews-container">
-                        <Reviews reviews={reviews} />
+                        <Reviews reviews={reviews} gameData={gameData} />
                     </div>
                 </div>
         </>

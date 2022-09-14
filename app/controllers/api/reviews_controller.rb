@@ -17,6 +17,16 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def update
+        
+    end
+
+    def destroy
+        @review = Review.find(params[:id])
+        @review.destroy
+        render :show
+    end
+
     private
     def review_params
         params.require(:review).permit(:body, :game_id, :reviewer_id)

@@ -21,4 +21,5 @@ class Review < ApplicationRecord
         class_name: :User
 
 
+    
 end

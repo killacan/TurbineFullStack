@@ -8,6 +8,7 @@ import { createReview } from "../../store/reviews";
 function ReviewsForm ({gameData}) {
     const dispatch = useDispatch();
 
+    
 
     const sessionUser = useSelector(state => state.session.user);
     const [body, setBody] = useState("");
@@ -15,6 +16,7 @@ function ReviewsForm ({gameData}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(createReview({body, reviewer_id:sessionUser.id, game_id:gameData.id}));
+        setBody("");
     }
 
     return (
