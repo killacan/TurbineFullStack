@@ -143,10 +143,10 @@ puts "creating games"
 
   eastArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Eastward/EastwardHeader.jpg"), filename: "EastwardHeader.jpg"}]
 
-  11.times do |index|
-    eastimg = {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Eastward/Eastward#{index + 1}.jpg"), filename: "Eastward#{index + 1}.jpg"}
-    eastArr << eastimg
-  end
+  # 11.times do |index|
+  #   eastimg = {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Eastward/Eastward#{index + 1}.jpg"), filename: "Eastward#{index + 1}.jpg"}
+  #   eastArr << eastimg
+  # end
 
   eastGame.images.attach(eastArr)
 
@@ -158,9 +158,9 @@ puts "creating games"
 
   jediArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Jedi_Fallen_Order/FallenHeader.jpg"), filename: "FallenHeader.jpg"}]
 
-15.times do |index|
-  jediArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Jedi_Fallen_Order/Fallen#{index + 1}.jpg"), filename: "Fallen#{index + 1}.jpg"}
-end
+# 15.times do |index|
+#   jediArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Jedi_Fallen_Order/Fallen#{index + 1}.jpg"), filename: "Fallen#{index + 1}.jpg"}
+# end
 
 jedi_fallen.images.attach(jediArr)
 
@@ -172,9 +172,9 @@ jedi_fallen.images.attach(jediArr)
 
   satisfactoryArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Satisfactory/SatisfactoryHeader.jpg"), filename: "SatisfactoryHeader.jpg"}]
 
-16.times do |index|
-  satisfactoryArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Satisfactory/Satisfactory#{index + 1}.jpg"), filename: "Satisfactory#{index + 1}.jpg"}
-end
+# 16.times do |index|
+#   satisfactoryArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Satisfactory/Satisfactory#{index + 1}.jpg"), filename: "Satisfactory#{index + 1}.jpg"}
+# end
 
 satisfactory.images.attach(satisfactoryArr)
 
@@ -188,9 +188,9 @@ satisfactory.images.attach(satisfactoryArr)
 
   squadronsArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Squadrons/SquadronsHeader.jpg"), filename: "SquadronsHeader.jpg"}]
 
-  9.times do |index|
-    squadronsArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Squadrons/Squadrons#{index + 1}.jpg"), filename: "Squadrons#{index + 1}.jpg"}
-  end
+  # 9.times do |index|
+  #   squadronsArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Squadrons/Squadrons#{index + 1}.jpg"), filename: "Squadrons#{index + 1}.jpg"}
+  # end
 
   squadrons.images.attach(squadronsArr)
 
@@ -202,9 +202,9 @@ satisfactory.images.attach(satisfactoryArr)
 
   steelrisingArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/SteelHeader.jpg"), filename: "SteelHeader.jpg"}]
 
-  6.times do |index|
-    steelrisingArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/Steel#{index + 1}.jpg"), filename: "Steel#{index + 1}.jpg"}
-  end
+  # 6.times do |index|
+  #   steelrisingArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/Steel#{index + 1}.jpg"), filename: "Steel#{index + 1}.jpg"}
+  # end
 
   steelrising.images.attach(steelrisingArr)
 
@@ -217,9 +217,9 @@ satisfactory.images.attach(satisfactoryArr)
 
   temtemArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Temtem/TemtemHeader.jpg"), filename: "TemtemHeader.jpg"}]
 
-  8.times do |index|
-    temtemArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Temtem/Temtem#{index + 1}.jpg"), filename: "Temtem#{index + 1}.jpg"}
-  end
+  # 8.times do |index|
+  #   temtemArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Temtem/Temtem#{index + 1}.jpg"), filename: "Temtem#{index + 1}.jpg"}
+  # end
 
   temtemGame.images.attach(temtemArr)
 
@@ -231,9 +231,9 @@ satisfactory.images.attach(satisfactoryArr)
 
   rimArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Rimworld/RimHeader.jpg"), filename: "RimHeader.jpg"}]
 
-  20.times do |index|
-    rimArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Rimworld/Rim#{index + 1}.jpg"), filename: "Rim#{index + 1}.jpg"}
-  end
+  # 20.times do |index|
+  #   rimArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Rimworld/Rim#{index + 1}.jpg"), filename: "Rim#{index + 1}.jpg"}
+  # end
 
   rimGame.images.attach(rimArr)
 
@@ -245,20 +245,53 @@ satisfactory.images.attach(satisfactoryArr)
 
   spdrArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Spiderman_Remastered/SpiderCover.jpg"), filename: "SpiderCover.jpg"}]
 
-  10.times do |index|
-    spdrArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Spiderman_Remastered/Spider#{index + 1}.jpg"), filename: "Spider#{index + 1}.jpg"}
-  end
+  # 10.times do |index|
+  #   spdrArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Spiderman_Remastered/Spider#{index + 1}.jpg"), filename: "Spider#{index + 1}.jpg"}
+  # end
 
   spdrGame.images.attach(spdrArr)
 
-  # More users
-  # 10.times do 
-  #   User.create!({
-  #     username: Faker::Internet.unique.username(specifier: 3),
-  #     email: Faker::Internet.unique.email,
-  #     password: 'password'
-  #   }) 
-  # end
+  Review.create(
+    game_id: 1,
+    reviewer_id: 1,
+    body: "This game is amazing. I love the story and the gameplay. I can't wait for the next one!"
+  )
+
+  Review.create(
+    game_id: 1,
+    reviewer_id: 2,
+    body: "It is great that such a small studio is able to make such an amazing game! I hope that they make another game!"
+  )
+
+  Review.create(
+    game_id: 3,
+    reviewer_id: 3,
+    body: "Jedi Fallen Order is a masterpice. I love Star Wars and always have. I think that they did this universe justice."
+  )
+
+  Review.create(
+    game_id: 3,
+    reviewer_id: 4,
+    body: "story of the game is very well done. I did encounter some glitches while playing but nothing that ruined the experience for me. If you don't mind sometimes getting stuck because the floor colision detection is not very good, I would highly reccomend."
+  )
+
+  Review.create(
+    game_id: 2,
+    reviewer_id: 3,
+    body: "A very artistic game with a great story. If you get this game, get ready to feel completely absorbed into the world."
+  )
+
+  Review.create(
+    game_id: 4,
+    reviewer_id: 5,
+    body: "Satisfactory is a beautiful game that takes production to the next level. You will never run out of things to do. Your production will never be enough, and your factory can always be made more efficient. I love this game."
+  ) 
+
+  Review.create(
+    game_id: 5,
+    reviewer_id: 6,
+    body: "Squadrons is a rough game to play. While I love that they don't have SBMM, it sometimes makes the game more difficult to play. I will get into a lobby with a lot of good pilots and I will get destroyed. They need a ranked mode for all the sweaty pilots out there."
+  )
 
   puts "Done!"
 end

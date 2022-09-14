@@ -3,14 +3,20 @@ import { NavLink, useParams } from "react-router-dom";
 import MiniNavBar from "../MiniNavBar";
 import { useEffect, useState } from "react";
 import { fetchGame, getGame } from "../../store/games";
-
+import Reviews from "../Reviews";
+import ReviewsForm from "../ReviewsForm";
+import { getReviews } from "../../store/reviews";
 
 const GameShowPage = () => {
     const dispatch = useDispatch();
     const { gameId } = useParams();
 
     const gameData = useSelector(getGame(gameId));
-    
+    const reviews = useSelector(getReviews);
+
+    const sessionUser = useSelector(state => state.session.user);
+    // console.log(sessionUser);
+
     useEffect(() => {
         dispatch(fetchGame(gameId));
     }, [gameId]);
@@ -19,7 +25,7 @@ const GameShowPage = () => {
     
     useEffect(() => {
 
-    }, [currentImage]);
+    }, [currentImage, reviews]);
 
     if (!gameData) return null
 
@@ -53,6 +59,11 @@ const GameShowPage = () => {
                     
                     </div>
 
+                    {sessionUser && (
+                    <div className="reviews-form-container">
+                        <ReviewsForm gameData={gameData}/>
+                    </div>)}
+
                     <div className="buy-button-container">
                             <div className="buy-button1-container">
                                 <NavLink to={`/cart`}> <button className="buy-button">Add to Cart</button></NavLink>
@@ -68,7 +79,7 @@ const GameShowPage = () => {
                     </div>
                     
                     <div className="game-show-page-reviews-container">
-
+                        <Reviews reviews={reviews} />
                     </div>
                 </div>
         </>

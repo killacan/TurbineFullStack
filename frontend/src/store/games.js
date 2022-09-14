@@ -22,8 +22,8 @@ export const fetchGames = () => async dispatch => {
 
 export const fetchGame = gameId => async dispatch => {
     const res = await csrfFetch(`/api/games/${gameId}`);
-    const game = await res.json();
-    dispatch({ type: RECEIVE_GAME, game });
+    const payload = await res.json();
+    dispatch({ type: RECEIVE_GAME, payload });
 }
 
 export const createGame = game => async dispatch => {
@@ -64,7 +64,7 @@ const gameReducer = (state = {}, action) => {
             newState = {...newState, ...action.games};
             return newState;
         case RECEIVE_GAME:
-            newState[action.game.id] = action.game;
+            newState[action.payload.game.id] = action.payload.game;
             return newState;
         case REMOVE_GAME:
             delete newState[action.gameId];

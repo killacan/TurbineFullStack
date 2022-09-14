@@ -21,17 +21,15 @@ function HomePage () {
     const [specialOffers, setSpecialOffers] = useState([]);
     const [mainFeatured, setMainFeatured] = useState(0);
     
+    
+
     useEffect(() => {
         setFeaturedProducts(games.slice(0, 5));
         setSpecialOffers(games.slice(5))
     },[games]);
 
     // useEffect(() => {
-    //     if (document.getElementsByClassName("mini-img")) {
-    //         console.log(document.getElementById("mini-img-1"), "whats up doc")
-    //         hover(document.getElementsByClassName("mini-img"));
-    //     }
-
+    //     // console.log(mainFeatured)
     // }, [mainFeatured]);
 
     // function hover(element) {
@@ -42,7 +40,7 @@ function HomePage () {
 
     // console.log(specialOffers, specialOffers[1], "featured");
     
-    if (!featuredProducts[currentFeatured] || !specialOffers) return null;
+    if (!featuredProducts[currentFeatured] || specialOffers.length < 1) return null;
     return (
         <>
             <MiniNavBar />
@@ -59,10 +57,10 @@ function HomePage () {
                             <h2 className="featured-text">{featuredProducts[currentFeatured].name}</h2>
                             <img className="featured-img" src={featuredProducts[currentFeatured].photoUrls[mainFeatured]} />
                             <div className="mini-featured-scrolly-images">
-                                <button value={1} ><img className="mini-img" id="mini-img-1" src={featuredProducts[currentFeatured].photoUrls[1]} /></button>
-                                <button value={2} ><img className="mini-img" id="mini-img-2" src={featuredProducts[currentFeatured].photoUrls[2]} /></button>
-                                <button value={3} ><img className="mini-img" id="mini-img-3" src={featuredProducts[currentFeatured].photoUrls[3]} /></button>
-                                <button value={4} ><img className="mini-img" id="mini-img-4" src={featuredProducts[currentFeatured].photoUrls[4]} /></button>
+                                <button value={1} onMouseOver={(e) => setMainFeatured(e.target.value)} onMouseOut={(e) => setMainFeatured(0)} ><img value={1} className="mini-img" id="mini-img-1" src={featuredProducts[currentFeatured].photoUrls[1]} /></button>
+                                <button value={2} onMouseOver={(e) => setMainFeatured(e.target.value)} onMouseOut={(e) => setMainFeatured(0)} ><img value={2} className="mini-img" id="mini-img-2" src={featuredProducts[currentFeatured].photoUrls[2]} /></button>
+                                <button value={3} onMouseOver={(e) => setMainFeatured(e.target.value)} onMouseOut={(e) => setMainFeatured(0)} ><img value={3} className="mini-img" id="mini-img-3" src={featuredProducts[currentFeatured].photoUrls[3]} /></button>
+                                <button value={4} onMouseOver={(e) => setMainFeatured(e.target.value)} onMouseOut={(e) => setMainFeatured(0)} ><img value={4} className="mini-img" id="mini-img-4" src={featuredProducts[currentFeatured].photoUrls[4]} /></button>
                             </div>
                         </div>
                     </NavLink>

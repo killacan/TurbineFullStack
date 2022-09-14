@@ -6,8 +6,9 @@
 #root {
     display: grid;
     grid-template-columns: 1fr 150px 640px 200px 1fr;
-    grid-template-rows: 100px 80px 950px 1fr;
+    /* grid-template-rows: 100px 80px 950px 1fr auto; */
     background: linear-gradient(322deg, #182a42 0%, #264259 85%,  #2a5e59 100%); 
+    min-height: 100vh;
     /* display: flex; */
 }
 

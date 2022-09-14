@@ -1,0 +1,9 @@
+.reviews {
+    display: grid;
+    border-top: 3px solid black;
+    margin-top: 20px;
+
+    .customer-reviews-text {
+        color: lightgrey;
+    }
+}
