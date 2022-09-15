@@ -155,6 +155,7 @@
     display: grid;
     grid-column: 2;
     grid-row: 6;
-    height: 450px;
+    height: auto;
+    min-height: 450px;
     width: 100%;
 }

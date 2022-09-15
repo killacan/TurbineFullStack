@@ -1,8 +1,23 @@
 import { NavLink } from 'react-router-dom';
 import MiniNavBar from '../MiniNavBar';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCartItems, getCartItems, destroyCartItem } from '../../store/carts';
+import { useEffect, useState } from 'react';
+import { fetchGames } from '../../store/games';
 
 function Cart () {
+    const dispatch = useDispatch();
 
+    const cartData = useSelector(state => state.carts);
+
+    useEffect(() => {
+        dispatch(fetchCartItems());
+    }, []);
+    
+    // console.log(cartItems, "cart items");
+
+    if (!cartData) return null;
+    
     return (
         <>
             <div className='background-radial'>
@@ -13,8 +28,17 @@ function Cart () {
             <div className='shopping-cart-container'>
                 <h2 className='shopping-cart-text'>YOUR SHOPPING CART</h2>
                 <div className='shopping-cart-items-container'>
-                    <div className='shopping-cart-item-box'>
-
+                    <div className='shopping-cart-items-box'>
+                        {Object.values(cartData).map(cartItem => (
+                            <div className='shopping-cart-item-container'>
+                                <h6>{cartItem.game}</h6>
+                                {/* {cartItem.photoUrls[0] && <img src={cartItem.photoUrls[0]} />} */}
+                                <button className='shopping-cart-item-button' onClick={() => dispatch(destroyCartItem(cartItem.id))} >REMOVE</button>
+                            </div>
+                        ))}
+                        <div className='shopping-cart-item-container'>
+                            <p>Estimated Total</p>
+                        </div>
                     </div>
                     <p>Sales tax will be calculated during checkout where applicable</p>
                     <NavLink to={'/'} className='continue-shopping-button'>Continue Shopping</NavLink>

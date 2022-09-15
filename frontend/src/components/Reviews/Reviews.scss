@@ -1,14 +1,84 @@
 .reviews {
     display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 60px;
     border-top: 3px solid black;
     margin-top: 20px;
 
     .customer-reviews-text {
         color: lightgrey;
+        grid-column: 1;
+        grid-row: 1;
     }
 
-    .review-container {
-        display: grid;
-        background-color: #1b2838;
+    .reviews-container {
+        grid-column: 1;
+        grid-row: 2;
+
+        .review-container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 1fr 1fr;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #1b2838;
+
+            .review-user-container {
+                grid-column: 1;
+                grid-row: 1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-left: 20px;
+                padding-top: 10px;
+
+                .review-userIcon {
+                    grid-column: 1;
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid grey;
+                    margin: 10xp;
+                }
+
+                h5 {
+                    color: lightgrey;
+                    padding-left: 10px;
+                }
+            }
+
+            .review-button-container {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 25px;
+                grid-column: 2;
+                grid-row: 2;
+
+                button {
+                    height: 40px;
+                    padding: 10px;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    margin: 5px;
+                    font-size: 15px;
+                    color: #2B5066;
+                    border: 2px solid #17202f;
+                    border-radius: 4px;
+                    background: linear-gradient( to bottom, rgba(193,228,249,1) 5%, rgba(148,183,202,1) 95%);
+                }
+
+                button:hover {
+                    background: linear-gradient( to bottom, rgb(120, 189, 229) 5%,  rgb(47, 140, 190) 95%);
+                    color: white;
+                }
+            }
+
+            .review-body-text {
+                grid-column: 2;
+                grid-row: 1;
+                color: lightgrey;
+                padding: 10px;
+            }
+
+        }
     }
 }

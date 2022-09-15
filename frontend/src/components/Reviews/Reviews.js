@@ -2,39 +2,45 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import userIcon from "../../assets/user.png";
-import { deleteReview } from "../../store/reviews";
+import { deleteReview, getReviews } from "../../store/reviews";
 import ReviewsEditForm from "../ReviewEditForm/ReviewEditForm";
 
 
-function Reviews ({reviews}, {gameData}) {
+function Reviews () {
     const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user);
+    let sessionUser = useSelector(state => state.session.user);
+    const reviews = useSelector(getReviews);
 
-    const [reviewsArr, setReviewsArr] = useState(Object.values(reviews));
     const [editForm, setEditForm] = useState(false);
     
-    console.log(Object.values(reviewsArr));
+    // console.log(reviews, "reviews");
     
-    let editShow = false;
     // let subGameData = gameData;
 
-    useEffect(() => {
-        setReviewsArr(Object.values(reviews));
-    }, [reviews, editShow]);
+    const toggleEditForm = () => {
+        console.log("toggle edit form", editForm);
+        setEditForm(!editForm);
+    }
+
+    if (!sessionUser) {
+        sessionUser = {id: 0};
+    }
+
 
 
     return (
         <div className="reviews">
             <h3 className="customer-reviews-text">Customer Reviews</h3>
             <div className="reviews-container">
-                {reviewsArr.map((review) => (
+                {reviews.map((review) => (
                     <div className="review-container">
-                        <p className="review-body-text">{review.body}</p>
-                        <div className="review-button-container">
-                            {review.reviewerId === sessionUser.id && <button className="review-delete-button" onClick={() => dispatch(deleteReview(review.id))} >Delete</button>}
-                            {review.reviewerId === sessionUser.id && <button className="review-edit-button" onClick={() => setEditForm(!editForm)}>Edit</button>}
-                            {editForm && <ReviewsEditForm body={review.body} />}
+                        <div className="review-user-container">
+                            <img className="review-userIcon" src={userIcon} />
+                            <h5>{review.reviewer}</h5>
                         </div>
+                        <p className="review-body-text">{review.body}</p>
+
+                        <ReviewsEditForm review={review} toggleEditForm={toggleEditForm} />
                     </div>
                 ))}
             </div>

@@ -6,12 +6,15 @@ import { fetchGame, getGame } from "../../store/games";
 import Reviews from "../Reviews";
 import ReviewsForm from "../ReviewsForm";
 import { getReviews } from "../../store/reviews";
+import { createCartItem, getCartItems } from "../../store/carts";
+import { fetchCartItems } from "../../store/carts";
 
 const GameShowPage = () => {
     const dispatch = useDispatch();
     const { gameId } = useParams();
 
     const gameData = useSelector(getGame(gameId));
+    const cartData = useSelector(state => state.carts);
     const reviews = useSelector(getReviews);
     
     const sessionUser = useSelector(state => state.session.user);
@@ -25,7 +28,16 @@ const GameShowPage = () => {
     
     useEffect(() => {
 
-    }, [currentImage, reviews]);
+    }, [currentImage, reviews, sessionUser]);
+
+    useEffect(() => {
+        dispatch(fetchCartItems());
+    }, []);
+
+    const handleAddCart = () => {
+        console.log(!(Object.values(cartData).some(cart => cart.gameId === gameData.id)), "cartData");
+        if (!(Object.values(cartData).some(cart => cart.gameId === gameData.id))) dispatch(createCartItem({game_id:gameId, user_id:sessionUser.id}));
+    }
 
     if (!gameData) return null
 
@@ -66,7 +78,7 @@ const GameShowPage = () => {
 
                     <div className="buy-button-container">
                             <div className="buy-button1-container">
-                                <NavLink to={`/cart`}> <button className="buy-button">Add to Cart</button></NavLink>
+                                <NavLink to={`/cart`}> <button className="buy-button" onClick={(e) => handleAddCart(e)}>Add to Cart</button></NavLink>
                             </div>
 
                             <div className="buy-button2-container">
