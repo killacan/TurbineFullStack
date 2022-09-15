@@ -37,16 +37,19 @@ function Cart () {
                             </div>
                         ))}
                         <div className='shopping-cart-item-container'>
-                            <p>Estimated Total</p>
+                            <p id='shopping-cart-item-text1' className='shopping-cart-item-text'>Estimated Total 1</p>
+                            <p id='shopping-cart-item-text2' className='shopping-cart-item-text'>Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</p>
                         </div>
                     </div>
-                    <p>Sales tax will be calculated during checkout where applicable</p>
-                    <NavLink to={'/'} className='continue-shopping-button'>Continue Shopping</NavLink>
-                    <h3>DELIVERY</h3>
-                    <div className='delivery-box'>
-                        {/* logo goes here */}
-                        <p className='delivery-top-text'>All digital goods are delivered via the Turbine desktop application</p>
-                        <p className='delivery-bottom-text'>Steam and your games will be available for download after your purchase</p>
+                    <div className='shopping-cart-bottom-container'>
+                        <p>1 Sales tax will be calculated during checkout where applicable</p>
+                        <NavLink to={'/'} className='continue-shopping-button'>Continue Shopping</NavLink>
+                        <h3>DELIVERY</h3>
+                        <div className='delivery-box'>
+                            {/* logo goes here */}
+                            <p className='delivery-top-text'>All digital goods are delivered via the Turbine desktop application</p>
+                            <p className='delivery-bottom-text'>Turbine and your games will be available for download after your purchase</p>
+                        </div>
                     </div>
                 </div>
                 <div className='shopping-cart-special-offers-container'>
