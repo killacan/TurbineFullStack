@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import './SignupForm.css';
+import './SignupForm.scss';
+import SignUpBackground from '../../assets/SignUpBackground.png';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -44,15 +45,22 @@ function SignupFormPage() {
   return (
     (formPage === 1) ? (
     <>
+        <div className="signin-background-img-cover">
+        </div>
+
+        <div className="signin-background-container">
+          <img className="signin-background" src={SignUpBackground} alt="signup-background" />
+          
+        </div>
       <div id="sign-up-page">
         
         <ul>
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
-        <h1>CREATE YOUR ACCOUNT</h1>
+        <h1 className="create-account-text">CREATE YOUR ACCOUNT</h1>
         <form onSubmit={handleSubmit} id="create-form">
           
-          <label>
+          <label className="create-account-labels">
             Email Address
             <input
               type="text"
@@ -61,7 +69,7 @@ function SignupFormPage() {
               required
             />
           </label>
-          <label>
+          <label className="create-account-labels">
             Confirm your Address
             <input
               type="text"
@@ -77,13 +85,16 @@ function SignupFormPage() {
     </>
     ) : (
       <>
+        <div className="signin-background-container">
+          <img className="signin-background" src={SignUpBackground} alt="signup-background" />
+        </div>
         <div id="sign-up-page">
         <ul>
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
-        <h1>CREATE YOUR ACCOUNT</h1>
+        <h1 className="create-account-text">CREATE YOUR ACCOUNT</h1>
           <form id="create-form">
-        <label>
+        <label className="create-account-labels">
             Username
             <input
               type="text"
@@ -92,7 +103,7 @@ function SignupFormPage() {
               required
             />
           </label>
-          <label>
+          <label className="create-account-labels">
             Password
               <input
                 type="password"
@@ -101,7 +112,7 @@ function SignupFormPage() {
                 required
               />
           </label>
-          <label>
+          <label className="create-account-labels">
             Confirm Password
               <input
                 type="password"

@@ -10,6 +10,8 @@ function Cart () {
 
     const cartData = useSelector(state => state.carts);
 
+    let totalCost = 0;
+
     useEffect(() => {
         dispatch(fetchCartItems());
     }, []);
@@ -18,6 +20,9 @@ function Cart () {
 
     if (!cartData) return null;
     
+    // console.log(Object.values(cartData).forEach((cart_cost) => totalCost += cart_cost.price), "cartData");
+    // console.log(totalCost, "totalCost");
+
     return (
         <>
             <div className='background-radial'>
@@ -33,16 +38,23 @@ function Cart () {
                             <div className='shopping-cart-item-container'>
                                 <h6>{cartItem.game}</h6>
                                 {/* {cartItem.photoUrls[0] && <img src={cartItem.photoUrls[0]} />} */}
-                                <button className='shopping-cart-item-button' onClick={() => dispatch(destroyCartItem(cartItem.id))} >REMOVE</button>
+                                <div className='shopping-cart-item-info-right'>
+                                    <p>{`$${cartItem.price}`}</p>
+                                    <button className='shopping-cart-item-button' onClick={() => dispatch(destroyCartItem(cartItem.id))} >Remove</button>
+                                </div>
                             </div>
                         ))}
-                        <div className='shopping-cart-item-container'>
-                            <p id='shopping-cart-item-text1' className='shopping-cart-item-text'>Estimated Total 1</p>
+                        <div className='shopping-cart-item-container-final'>
+                            <p id='shopping-cart-item-text1' className='shopping-cart-item-text'>Estimated Total*</p>
                             <p id='shopping-cart-item-text2' className='shopping-cart-item-text'>Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</p>
+                            <p id='shopping-cart-item-text3' className='shopping-cart-item-text'>{`$${totalCost}`}</p>
+                            <div className='shopping-cart-item-buttons-container'>
+                                <button id='shopping-cart-item-button1' className='shopping-cart-item-button'>Purchase for myself</button>
+                            </div>
                         </div>
                     </div>
                     <div className='shopping-cart-bottom-container'>
-                        <p>1 Sales tax will be calculated during checkout where applicable</p>
+                        <p>* Sales tax will be calculated during checkout where applicable</p>
                         <NavLink to={'/'} className='continue-shopping-button'>Continue Shopping</NavLink>
                         <h3>DELIVERY</h3>
                         <div className='delivery-box'>

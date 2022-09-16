@@ -1,3 +1,22 @@
+.signup-background-container {
+    grid-column: 1/6;
+    grid-row: 1/4;
+    height: 800px;
+    overflow: hidden;
+    
+    .signup-background {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    .background-img-cover {
+        object-fit: cover;
+        background:radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%),  center top no-repeat, #181A21
+    }
+}
+
 #sign-in-page {
     display: grid;
     grid-template-rows: 150px;

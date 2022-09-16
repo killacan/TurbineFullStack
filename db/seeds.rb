@@ -87,7 +87,8 @@ puts "creating games"
   lambGame = Game.create!(
     name: 'Cult of the Lamb',
     description: 'Start your own cult in a land of false prophets, venturing out into diverse and mysterious regions to build a loyal community of woodland Followers and spread your Word to become the one true cult.',
-    uploader_id: 3
+    uploader_id: 3,
+    price: 24.99
   )
 
   lambHeader = {io: URI.open('https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/lamb/LambHeader.jpg'), filename: 'LambHeader.jpg'}
@@ -136,7 +137,8 @@ puts "creating games"
   eastGame = Game.create!(
     name: 'Eastward',
     description: 'Welcome to the charming world of Eastward - population declining! Journey through a society on the brink of collapse. Discover delightful towns, strange creatures and even stranger people! Wield a trusty frying pan and mystic powers on an adventure into the unknown…',
-    uploader_id: 2
+    uploader_id: 2,
+    price: 24.99
   )
 
   puts "eastward"
@@ -153,7 +155,8 @@ puts "creating games"
   jedi_fallen = Game.create!(
     name: 'Jedi Fallen Order',
     description: 'A galaxy-spanning adventure awaits in Star Wars Jedi: Fallen Order, a 3rd person action-adventure title from Respawn. An abandoned Padawan must complete his training, develop new powerful Force abilities, and master the art of the lightsaber - all while staying one step ahead of the Empire.',
-    uploader_id: 1
+    uploader_id: 1,
+    price: 39.99
   )
 
   jediArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Jedi_Fallen_Order/FallenHeader.jpg"), filename: "FallenHeader.jpg"}]
@@ -167,7 +170,8 @@ jedi_fallen.images.attach(jediArr)
   satisfactory = Game.create!(
     name: 'Satisfactory',
     description: 'Satisfactory is a first-person open-world factory building game with a dash of exploration and combat. Play alone or with friends, explore an alien planet, create multi-story factories, and enter conveyor belt heaven!',
-    uploader_id: 5
+    uploader_id: 5,
+    price: 29.99
   )
 
   satisfactoryArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Satisfactory/SatisfactoryHeader.jpg"), filename: "SatisfactoryHeader.jpg"}]
@@ -183,7 +187,8 @@ satisfactory.images.attach(satisfactoryArr)
   squadrons = Game.create!(
     name: 'Squadrons',
     description: 'Master the art of starfighter combat in the authentic piloting experience STAR WARS™: Squadrons. Feel the adrenaline of first-person multiplayer space dogfights alongside your squadron, and buckle up in a thrilling STAR WARS™ story.',
-    uploader_id: 4
+    uploader_id: 4,
+    price: 39.99
   )
 
   squadronsArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Squadrons/SquadronsHeader.jpg"), filename: "SquadronsHeader.jpg"}]
@@ -197,7 +202,8 @@ satisfactory.images.attach(satisfactoryArr)
   steelrising = Game.create!(
     name: 'Steelrising',
     description: "Paris, 1789. The French Revolution has been suppressed with bloodshed by Louis XVI and his merciless mechanical army. Aegis, a mysterious automaton masterpiece, must confront the king's army alone to save history in this challenging action-RPG.",
-    uploader_id: 6
+    uploader_id: 6,
+    price: 49.99
   )
 
   steelrisingArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/SteelHeader.jpg"), filename: "SteelHeader.jpg"}]
@@ -212,7 +218,8 @@ satisfactory.images.attach(satisfactoryArr)
   temtemGame = Game.create!(
     name: 'Temtem',
     description: "Temtem is a massively multiplayer creature-collection adventure. Seek adventure in the lovely Airborne Archipelago alongside your Temtem squad. Catch every Temtem, battle other tamers, customize your house, join a friend's adventure or explore the dynamic online world.",
-    uploader_id: 7
+    uploader_id: 7,
+    price: 44.99
   )
 
   temtemArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Temtem/TemtemHeader.jpg"), filename: "TemtemHeader.jpg"}]
@@ -226,7 +233,8 @@ satisfactory.images.attach(satisfactoryArr)
   rimGame = Game.create!(
     name: 'Rimworld',
     description: 'A sci-fi colony sim driven by an intelligent AI storyteller. Generates stories by simulating psychology, ecology, gunplay, melee combat, climate, biomes, diplomacy, interpersonal relationships, art, medicine, trade, and more.',
-    uploader_id: 8
+    uploader_id: 8,
+    price: 34.99
   )
 
   rimArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Rimworld/RimHeader.jpg"), filename: "RimHeader.jpg"}]
@@ -240,7 +248,8 @@ satisfactory.images.attach(satisfactoryArr)
   spdrGame = Game.create!(
     name: 'Spiderman Remastered',
     description: "In Marvel’s Spider-Man Remastered, the worlds of Peter Parker and Spider-Man collide in an original action-packed story. Play as an experienced Peter Parker, fighting big crime and iconic villains in Marvel’s New York. Web-swing through vibrant neighborhoods and defeat villains with epic... ",
-    uploader_id: 9
+    uploader_id: 9,
+    price: 59.99
   )
 
   spdrArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Spiderman_Remastered/SpiderCover.jpg"), filename: "SpiderCover.jpg"}]

@@ -31,9 +31,9 @@ function Navigation() {
           <li>
             <NavLink to={'/'} >Store</NavLink>
           </li>
-          <li>
-            <NavLink to={'/'}>Community</NavLink>
-          </li>
+          {sessionUser && <li>
+            <NavLink to={`/users/${sessionUser.id}`}>{sessionUser.username}</NavLink>
+          </li>}
           <li>
             <NavLink to={'/'}>About</NavLink>
           </li>

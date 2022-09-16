@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import './LoginForm.css';
+import './LoginForm.scss';
+import SignUpBackground from '../../assets/SignUpBackground.png';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -51,6 +52,10 @@ function LoginFormPage() {
 
   return (
     <>
+      <div className="signup-background-container">
+        {/* <div className="background-img-cover"></div> */}
+        <img className="signup-background" src={SignUpBackground} alt="signup-background" />
+      </div>
       <div id="sign-in-page">
         <h1 id="sign-in-title-text"> SIGN IN</h1>
         <div id="sign-in-box">

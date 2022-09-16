@@ -2,7 +2,11 @@ class Api::CartsController < ApplicationController
 
     def index
         @current_user = current_user
-        @carts = current_user.cart_items
+        if @current_user
+            @carts = current_user.cart_items 
+        else 
+            @carts = []
+        end
     end
 
     def show
@@ -13,7 +17,11 @@ class Api::CartsController < ApplicationController
         @current_user = current_user
         @cart = Cart.new(cart_params)
         if @cart.save
-            @carts = current_user.cart_items
+            if @current_user
+                @carts = current_user.cart_items 
+            else 
+                @carts = []
+            end
             render :index
         else
             render json: @cart.errors.full_messages, status: 422 if !@cart.save

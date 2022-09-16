@@ -1,4 +1,4 @@
 import UserShowPage from "./UserShowPage";
-import "./UserShowPage.css";
+import "./UserShowPage.scss";
 
 export default UserShowPage;

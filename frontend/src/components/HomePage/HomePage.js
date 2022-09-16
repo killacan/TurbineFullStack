@@ -85,25 +85,26 @@ function HomePage () {
                     <div className="special-offers-holder">
                     {currentSpecialOffers === 0 && 
                         <div className="special-page-1">
-                            <NavLink className="sp1-1" id="special-offers-link" to={`/games/${specialOffers[1].id}`}>
+                            <NavLink className="sp1-1" id="special-offers-link" to={`/games/${specialOffers[0].id}`}>
                             <div className="box1-1">
+                                <img src={specialOffers[0].photoUrls[0]} />
+                            </div>
+                            </NavLink>
+                            <NavLink className="sp1-2" id="special-offers-link" to={`/games/${specialOffers[1].id}`}>
+                            <div className="box1-2">
                                 <img src={specialOffers[1].photoUrls[0]} />
                             </div>
                             </NavLink>
-                            <NavLink className="sp1-2" id="special-offers-link" to={`/games/${specialOffers[2].id}`}>
-                            <div className="box1-2">
+                            <NavLink className="sp1-3" id="special-offers-link" to={`/games/${specialOffers[2].id}`}>
+                            <div className="box1-3">
                                 <img src={specialOffers[2].photoUrls[0]} />
                             </div>
                             </NavLink>
-                            <NavLink className="sp1-3" id="special-offers-link" to={`/games/${specialOffers[3].id}`}>
-                            <div className="box1-3">
+                            <NavLink className="sp1-4" id="special-offers-link" to={`/games/${specialOffers[3].id}`}>
+                            <div className="sp1-4">
                                 <img src={specialOffers[3].photoUrls[0]} />
                             </div>
                             </NavLink>
-                            
-                            <div className="sp1-4">
-
-                            </div>
                         </div>}
                         {currentSpecialOffers === 1 &&
                         <div className="special-page-2">

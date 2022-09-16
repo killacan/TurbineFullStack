@@ -28,8 +28,8 @@ export const login = ({ credential, password }) => async dispatch => {
     body: JSON.stringify({ credential, password })
   });
   const data = await response.json();
-  storeCurrentUser(data.user);
-  dispatch(setCurrentUser(data.user));
+  storeCurrentUser(data);
+  dispatch(setCurrentUser(data));
   return response;
 };
 
@@ -53,8 +53,8 @@ export const signup = (user) => async (dispatch) => {
     })
   });
   const data = await response.json();
-  storeCurrentUser(data.user);
-  dispatch(setCurrentUser(data.user));
+  storeCurrentUser(data);
+  dispatch(setCurrentUser(data));
   return response;
 };
 
@@ -72,6 +72,7 @@ const initialState = {
 };
 
 const sessionReducer = (state = initialState, action) => {
+  // debugger
   switch (action.type) {
     case SET_CURRENT_USER:
       return { ...state, user: action.payload };

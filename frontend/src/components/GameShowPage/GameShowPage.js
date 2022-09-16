@@ -17,7 +17,7 @@ const GameShowPage = () => {
     const cartData = useSelector(state => state.carts);
     const reviews = useSelector(getReviews);
     
-    const sessionUser = useSelector(state => state.session.user);
+    let sessionUser = useSelector(state => state.session.user);
     // console.log(sessionUser);
     
     useEffect(() => {
@@ -36,6 +36,7 @@ const GameShowPage = () => {
 
     const handleAddCart = () => {
         console.log(!(Object.values(cartData).some(cart => cart.gameId === gameData.id)), "cartData");
+        if (!sessionUser) {sessionUser = {id: 0};}
         if (!(Object.values(cartData).some(cart => cart.gameId === gameData.id))) dispatch(createCartItem({game_id:gameId, user_id:sessionUser.id}));
     }
 
