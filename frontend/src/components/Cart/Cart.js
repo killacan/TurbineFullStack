@@ -12,8 +12,8 @@ function Cart () {
 
     let totalCost = 0;
     
-    // tuna = 0;
-    
+    // tuna
+
     useEffect(() => {
         dispatch(fetchCartItems());
     }, []);
