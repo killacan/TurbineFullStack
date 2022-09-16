@@ -35,18 +35,19 @@ function Cart () {
                 <div className='shopping-cart-items-container'>
                     <div className='shopping-cart-items-box'>
                         {Object.values(cartData).map(cartItem => (
-                            <NavLink to={`/games/${cartItem.gameId}`}>
-                                <div className='shopping-cart-item-container'>
-                                    <div className='shopping-cart-item-info-left'>
-                                        <h6 className='cart-item-title-text'>{cartItem.game}</h6>
-                                        {cartItem.photoUrls[0] && <img className='cart-item-photo' src={cartItem.photoUrls[0]} />}
-                                    </div>
+                            <div className='shopping-cart-item-container'>
+                                    <NavLink to={`/games/${cartItem.gameId}`}>
+                                        <div className='shopping-cart-item-info-left'>
+                                            <h6 className='cart-item-title-text'>{cartItem.game}</h6>
+                                            {cartItem.photoUrls[0] && <img className='cart-item-photo' src={cartItem.photoUrls[0]} />}
+                                        </div>
+                                    </NavLink>
                                     <div className='shopping-cart-item-info-right'>
                                         <p>{`$${cartItem.price}`}</p>
                                         <button className='shopping-cart-item-button' onClick={() => dispatch(destroyCartItem(cartItem.id))} >Remove</button>
                                     </div>
                                 </div>
-                            </NavLink>
+
                         ))}
                         <div className='shopping-cart-item-container-final'>
                             <p id='shopping-cart-item-text1' className='shopping-cart-item-text'>Estimated Total*</p>
