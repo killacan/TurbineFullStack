@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 // import LoginFormPage from './LoginFormPage';
 import './Navigation.scss';
+import turbinelogo from '../../assets/turbinelogo.png'
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -25,7 +26,7 @@ function Navigation() {
 
   return (
     <div className='navigation-holder'>
-      <NavLink id='main-title' to={'/'}><h1>Turbine</h1></NavLink>
+      <NavLink id='main-title' to={'/'}><img src={turbinelogo} className="turbinelogo" /><h1>Turbine</h1></NavLink>
       <div id='nav-options-holder'>
         <ul>
           <li>

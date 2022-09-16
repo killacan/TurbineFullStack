@@ -35,7 +35,7 @@ const GameShowPage = () => {
     }, []);
 
     const handleAddCart = () => {
-        console.log(!(Object.values(cartData).some(cart => cart.gameId === gameData.id)), "cartData");
+        // console.log(!(Object.values(cartData).some(cart => cart.gameId === gameData.id)), "cartData");
         if (!sessionUser) {sessionUser = {id: 0};}
         if (!(Object.values(cartData).some(cart => cart.gameId === gameData.id))) dispatch(createCartItem({game_id:gameId, user_id:sessionUser.id}));
     }
@@ -60,13 +60,13 @@ const GameShowPage = () => {
                             <p>{gameData.description}</p>
                         </div>
 
-                        {/* <div className="game-show-page-media-scrolly">
+                        <div className="game-show-page-media-scrolly">
                             {gameData.photoUrls.slice(1).map ((photo, idx) => (
                                 <button value={idx + 1} className="mini-scrolly-image-container" onClick={(e) => setCurrentImage(e.target.value)}>
                                     <img className={`mini-scrolly-imgs`} id={`mini-scrolly-imgs${idx}`} src={photo} />
                                 </button>
                             ))}
-                        </div>  */}
+                        </div> 
                     </div>
                     <div className="game-show-page-buttons">
                     
@@ -82,9 +82,9 @@ const GameShowPage = () => {
                                 <NavLink to={`/cart`}> <button className="buy-button" onClick={(e) => handleAddCart(e)}>Add to Cart</button></NavLink>
                             </div>
 
-                            <div className="buy-button2-container">
+                            {/* <div className="buy-button2-container">
                                 <button className="buy-button">Buy Now</button>
-                            </div>
+                            </div> */}
                     </div>
 
                     <div className="relevant-box">

@@ -303,7 +303,8 @@
 
     img {
         width: 100%;
-        height: 70%;
+        object-fit: cover;
+        height: 100%;
     }
 
     .sp1-1 {
@@ -317,6 +318,11 @@
         .box1-1 {
             height: 100%;
             width: 100%;
+
+            .img1 {
+                height: 100%;
+                width: 100%;
+            }
         }
     }
 
@@ -332,6 +338,10 @@
         grid-column: 3;
         grid-row: 1;
         background-color: #1e6c95;
+        width: 100%;
+        height: 100%;
+
+
     }
 
     .sp1-4 {
@@ -339,7 +349,31 @@
         grid-column: 3;
         grid-row: 2;
         background-color: #1e6c95;
+        width: 100%;
+        height: 100%;
+        
+        .img4 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .box1-4 {
+            height: 100%;
+            width: 100%;
+
+        }
     }
+
+}
+
+.img3 {
+    width: 100%;
+    height: 100%;
+}
+
+.box1-3 {
+    width: 100%;
+    height: 100%    ;
 
 }
 
@@ -427,4 +461,19 @@
         background-color: #1e6c95;
     }
 
+}
+
+#special-offers-link {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.box1-2 {
+    width: 100%;
+    height: 100%;
+}
+
+.img2 {
+    width: 200%;
 }

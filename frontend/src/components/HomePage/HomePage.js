@@ -37,8 +37,10 @@ function HomePage () {
     //     element.addEventListener("mouseleave", e => setMainFeatured(0));
     // }
 
+    // () => setCurrentSpecialOffers(((currentSpecialOffers - 1) + 3) % 3)
+    // () => setCurrentSpecialOffers((currentSpecialOffers + 1) % 3)
 
-    // console.log(specialOffers, specialOffers[1], "featured");
+    // console.log(specialOffers, specialOffers[0], "featured");
     
     if (!featuredProducts[currentFeatured] || specialOffers.length < 1) return null;
     return (
@@ -77,7 +79,7 @@ function HomePage () {
                         <button className="special-offers-button">BROWSE MORE</button>
                     </div>
                     <div className="left-special-offers-arrow-holder">
-                        <div className="left-special-offers-arrow" onClick={() => setCurrentSpecialOffers(((currentSpecialOffers - 1) + 3) % 3)}>
+                        <div className="left-special-offers-arrow">
                             <img className="arrows" src={leftArrow} />
                         </div>
                     </div>
@@ -87,22 +89,22 @@ function HomePage () {
                         <div className="special-page-1">
                             <NavLink className="sp1-1" id="special-offers-link" to={`/games/${specialOffers[0].id}`}>
                             <div className="box1-1">
-                                <img src={specialOffers[0].photoUrls[0]} />
+                                <img className="img1" src={specialOffers[0].photoUrls[7]} />
                             </div>
                             </NavLink>
                             <NavLink className="sp1-2" id="special-offers-link" to={`/games/${specialOffers[1].id}`}>
                             <div className="box1-2">
-                                <img src={specialOffers[1].photoUrls[0]} />
+                                <img className="img2" src={specialOffers[1].photoUrls[0]} />
                             </div>
                             </NavLink>
                             <NavLink className="sp1-3" id="special-offers-link" to={`/games/${specialOffers[2].id}`}>
                             <div className="box1-3">
-                                <img src={specialOffers[2].photoUrls[0]} />
+                                <img className="img3" src={specialOffers[2].photoUrls[0]} />
                             </div>
                             </NavLink>
                             <NavLink className="sp1-4" id="special-offers-link" to={`/games/${specialOffers[3].id}`}>
                             <div className="sp1-4">
-                                <img src={specialOffers[3].photoUrls[0]} />
+                                <img className="img4" src={specialOffers[3].photoUrls[0]} />
                             </div>
                             </NavLink>
                         </div>}
@@ -141,7 +143,7 @@ function HomePage () {
                         </div>}
                     </div>
 
-                    <div className="right-special-offers-arrow" onClick={() => setCurrentSpecialOffers((currentSpecialOffers + 1) % 3)}>
+                    <div className="right-special-offers-arrow">
                         <img className="arrows" src={rightArrow} />
                     </div>
                 </div>

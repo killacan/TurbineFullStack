@@ -145,10 +145,10 @@ puts "creating games"
 
   eastArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Eastward/EastwardHeader.jpg"), filename: "EastwardHeader.jpg"}]
 
-  # 11.times do |index|
-  #   eastimg = {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Eastward/Eastward#{index + 1}.jpg"), filename: "Eastward#{index + 1}.jpg"}
-  #   eastArr << eastimg
-  # end
+  11.times do |index|
+    eastimg = {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Eastward/Eastward#{index + 1}.jpg"), filename: "Eastward#{index + 1}.jpg"}
+    eastArr << eastimg
+  end
 
   eastGame.images.attach(eastArr)
 
@@ -161,9 +161,9 @@ puts "creating games"
 
   jediArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Jedi_Fallen_Order/FallenHeader.jpg"), filename: "FallenHeader.jpg"}]
 
-# 15.times do |index|
-#   jediArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Jedi_Fallen_Order/Fallen#{index + 1}.jpg"), filename: "Fallen#{index + 1}.jpg"}
-# end
+15.times do |index|
+  jediArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Jedi_Fallen_Order/Fallen#{index + 1}.jpg"), filename: "Fallen#{index + 1}.jpg"}
+end
 
 jedi_fallen.images.attach(jediArr)
 
@@ -176,9 +176,9 @@ jedi_fallen.images.attach(jediArr)
 
   satisfactoryArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Satisfactory/SatisfactoryHeader.jpg"), filename: "SatisfactoryHeader.jpg"}]
 
-# 16.times do |index|
-#   satisfactoryArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Satisfactory/Satisfactory#{index + 1}.jpg"), filename: "Satisfactory#{index + 1}.jpg"}
-# end
+16.times do |index|
+  satisfactoryArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Satisfactory/Satisfactory#{index + 1}.jpg"), filename: "Satisfactory#{index + 1}.jpg"}
+end
 
 satisfactory.images.attach(satisfactoryArr)
 
@@ -193,9 +193,9 @@ satisfactory.images.attach(satisfactoryArr)
 
   squadronsArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Squadrons/SquadronsHeader.jpg"), filename: "SquadronsHeader.jpg"}]
 
-  # 9.times do |index|
-  #   squadronsArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Squadrons/Squadrons#{index + 1}.jpg"), filename: "Squadrons#{index + 1}.jpg"}
-  # end
+  9.times do |index|
+    squadronsArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Squadrons/Squadrons#{index + 1}.jpg"), filename: "Squadrons#{index + 1}.jpg"}
+  end
 
   squadrons.images.attach(squadronsArr)
 
@@ -208,9 +208,11 @@ satisfactory.images.attach(satisfactoryArr)
 
   steelrisingArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/SteelHeader.jpg"), filename: "SteelHeader.jpg"}]
 
-  # 6.times do |index|
-  #   steelrisingArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/Steel#{index + 1}.jpg"), filename: "Steel#{index + 1}.jpg"}
-  # end
+  6.times do |index|
+    steelrisingArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/Steel#{index + 1}.jpg"), filename: "Steel#{index + 1}.jpg"}
+  end
+
+  steelrisingArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Steelrising/SteelPromo.jpg"), filename: "SteelPromo.jpg"}
 
   steelrising.images.attach(steelrisingArr)
 
@@ -224,9 +226,9 @@ satisfactory.images.attach(satisfactoryArr)
 
   temtemArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Temtem/TemtemHeader.jpg"), filename: "TemtemHeader.jpg"}]
 
-  # 8.times do |index|
-  #   temtemArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Temtem/Temtem#{index + 1}.jpg"), filename: "Temtem#{index + 1}.jpg"}
-  # end
+  8.times do |index|
+    temtemArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Temtem/Temtem#{index + 1}.jpg"), filename: "Temtem#{index + 1}.jpg"}
+  end
 
   temtemGame.images.attach(temtemArr)
 
@@ -239,9 +241,9 @@ satisfactory.images.attach(satisfactoryArr)
 
   rimArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Rimworld/RimHeader.jpg"), filename: "RimHeader.jpg"}]
 
-  # 20.times do |index|
-  #   rimArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Rimworld/Rim#{index + 1}.jpg"), filename: "Rim#{index + 1}.jpg"}
-  # end
+  20.times do |index|
+    rimArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Rimworld/Rim#{index + 1}.jpg"), filename: "Rim#{index + 1}.jpg"}
+  end
 
   rimGame.images.attach(rimArr)
 
@@ -254,11 +256,41 @@ satisfactory.images.attach(satisfactoryArr)
 
   spdrArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Spiderman_Remastered/SpiderCover.jpg"), filename: "SpiderCover.jpg"}]
 
-  # 10.times do |index|
-  #   spdrArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Spiderman_Remastered/Spider#{index + 1}.jpg"), filename: "Spider#{index + 1}.jpg"}
-  # end
+  10.times do |index|
+    spdrArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Spiderman_Remastered/Spider#{index + 1}.jpg"), filename: "Spider#{index + 1}.jpg"}
+  end
 
   spdrGame.images.attach(spdrArr)
+
+  disco = Game.create!(
+    name: 'Disco Elysium',
+    description: "Disco Elysium - The Final Cut is a groundbreaking role playing game. You’re a detective with a unique skill system at your disposal and a whole city to carve your path across. Interrogate unforgettable characters, crack murders or take bribes. Become a hero or an absolute disaster of a human being.",
+    uploader_id: 5,
+    price: 39.99
+  )
+
+  discoArr = [{io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Disco/DiscoHeader.jpg"), filename: "DiscoHeader.jpg"}]
+
+  15.times do |index|
+    discoArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Disco/Disco#{index + 1}.jpg"), filename: "Disco#{index + 1}"}
+  end
+
+  disco.images.attach(discoArr)
+
+  stray = Game.create!(
+    name: 'Stray',
+    description: "Lost, alone and separated from family, a stray cat must untangle an ancient mystery to escape a long-forgotten cybercity and find their way home.",
+    uploader_id: 2,
+    price: 29.99
+  )
+
+  strayArr =[{io: URI.open("https://s3.console.aws.amazon.com/s3/object/turbine-seeds-aa?region=us-west-1&prefix=Stray/StrayHeader.jpg"), filename: 'StrayHeader.jpg'}]
+
+  8.times do |index|
+    strayArr << {io: URI.open("https://turbine-seeds-aa.s3.us-west-1.amazonaws.com/Stray/Stray#{index + 1}.jpg"), filename: "stray#{index + 1}"}
+  end
+
+  stray.images.attach(strayArr)
 
   Review.create(
     game_id: 1,
