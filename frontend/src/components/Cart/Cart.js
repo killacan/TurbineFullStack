@@ -11,7 +11,9 @@ function Cart () {
     const cartData = useSelector(state => state.carts);
 
     let totalCost = 0;
-
+    
+    // tuna = 0;
+    
     useEffect(() => {
         dispatch(fetchCartItems());
     }, []);
