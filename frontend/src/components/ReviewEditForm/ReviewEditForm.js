@@ -24,8 +24,9 @@ function ReviewsEditForm ({review, toggleEditForm}) {
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        // toggleEditForm();
+        setEditForm(!editForm)
         dispatch(updateReview({id: review.id, body: newBody, reviewer_id:sessionUser.id, game_id:gameData.id}));
-        toggleEditForm();
     }
 
     if (!sessionUser) {

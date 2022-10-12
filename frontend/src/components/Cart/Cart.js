@@ -3,7 +3,7 @@ import MiniNavBar from '../MiniNavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartItems, getCartItems, destroyCartItem } from '../../store/carts';
 import { useEffect, useState } from 'react';
-import { fetchGames } from '../../store/games';
+import { deleteGame, fetchGames } from '../../store/games';
 
 function Cart () {
     const dispatch = useDispatch();
@@ -17,12 +17,18 @@ function Cart () {
     useEffect(() => {
         dispatch(fetchCartItems());
     }, []);
+
+    const clearCart = () => {
+        Object.values(cartData).forEach((item) => {
+            dispatch(destroyCartItem(item.id))
+        });
+    }
     
     // console.log(cartItems, "cart items");
 
     if (!cartData) return null;
     
-    // console.log(Object.values(cartData).forEach((cart_cost) => totalCost += cart_cost.price), "cartData");
+    console.log(Object.values(cartData).forEach((cart_cost) => totalCost += cart_cost.price), "cartData");
     // console.log(totalCost, "totalCost");
 
     return (
@@ -56,7 +62,7 @@ function Cart () {
                             <p id='shopping-cart-item-text2' className='shopping-cart-item-text'>Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</p>
                             <p id='shopping-cart-item-text3' className='shopping-cart-item-text'>{`$${totalCost}`}</p>
                             <div className='shopping-cart-item-buttons-container'>
-                                <button id='shopping-cart-item-button1' className='shopping-cart-item-button'>Purchase for myself</button>
+                                <button id='shopping-cart-item-button1' className='shopping-cart-item-button' onClick={() => clearCart()}>Purchase for myself</button>
                             </div>
                         </div>
                     </div>

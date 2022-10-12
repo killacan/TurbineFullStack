@@ -78,10 +78,14 @@ const GameShowPage = () => {
                     </div>)}
 
                     <div className="buy-button-container">
-                            <div className="buy-button1-container">
-                                <NavLink to={`/cart`}> <button className="buy-button" onClick={(e) => handleAddCart(e)}>Add to Cart</button></NavLink>
+                        <div className="buy-button-background"></div>
+                        <h3 className="buy-me">Buy {gameData.name}</h3>
+                        <div className="actual-buy">
+                            <div className="price-box"><p>${gameData.price}</p>
+                            <NavLink to={`/cart`}><button className="buy-button" onClick={(e) => handleAddCart(e)}>Add to Cart</button></NavLink>
                             </div>
-
+                            
+                        </div>
                             {/* <div className="buy-button2-container">
                                 <button className="buy-button">Buy Now</button>
                             </div> */}
