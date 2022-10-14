@@ -216,6 +216,7 @@ satisfactory.images.attach(satisfactoryArr)
 
   steelrising.images.attach(steelrisingArr)
 
+  puts "steelrising"
 
   temtemGame = Game.create!(
     name: 'Temtem',
@@ -247,6 +248,8 @@ satisfactory.images.attach(satisfactoryArr)
 
   rimGame.images.attach(rimArr)
 
+  puts "rimworld"
+
   spdrGame = Game.create!(
     name: 'Spiderman Remastered',
     description: "In Marvel’s Spider-Man Remastered, the worlds of Peter Parker and Spider-Man collide in an original action-packed story. Play as an experienced Peter Parker, fighting big crime and iconic villains in Marvel’s New York. Web-swing through vibrant neighborhoods and defeat villains with epic... ",
@@ -277,6 +280,8 @@ satisfactory.images.attach(satisfactoryArr)
 
   disco.images.attach(discoArr)
 
+  puts "disco"
+
   stray = Game.create!(
     name: 'Stray',
     description: "Lost, alone and separated from family, a stray cat must untangle an ancient mystery to escape a long-forgotten cybercity and find their way home.",
@@ -291,6 +296,8 @@ satisfactory.images.attach(satisfactoryArr)
   end
 
   stray.images.attach(strayArr)
+
+  puts "stray"
 
   Review.create(
     game_id: 1,
