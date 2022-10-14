@@ -1,4 +1,6 @@
 
+import csrfFetch from "./csrf";
+
 export const GET_USER = 'users/GET_USER';
 
 export const getUser = userId => state => {return state.users[userId]};
@@ -10,10 +12,10 @@ export const fetchUser = (userId) => async (dispatch) => {
 };
 
 export const updateUser = (userData) => async (dispatch) => {
-    const res= await fetch(`/api/users/${userData.id}`, {
+    const res= await csrfFetch(`/api/users/${userData.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(userData)
+        body: JSON.stringify({user: userData})
     });
     const user = await res.json();
     dispatch({ type: GET_USER, user });

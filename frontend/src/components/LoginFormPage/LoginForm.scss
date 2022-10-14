@@ -59,6 +59,10 @@
     align-items: center;
 }
 
+.sign-in-form > ul {
+    color: lightgray;
+}
+
 .account-sign-in-input-container {
     display: flex;
     grid-row: 1;
@@ -86,6 +90,11 @@
     padding: 0;
     border: none;
     margin: 10px;
+    cursor: pointer;
+}
+
+.sign-in-form > button:hover {
+    background: linear-gradient(90deg, #58d5ff 0%, #2D73FF 100%);
 }
 
 .sign-in-form input {

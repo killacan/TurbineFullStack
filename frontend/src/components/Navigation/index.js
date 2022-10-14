@@ -35,12 +35,12 @@ function Navigation() {
           {sessionUser && <li>
             <NavLink to={`/users/${sessionUser.id}`}>{sessionUser.username}</NavLink>
           </li>}
-          <li>
+          {/* <li>
             <NavLink to={'/'}>About</NavLink>
           </li>
           <li>
             <NavLink to={'/'}>Support</NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div id='sign-in-holder'>
