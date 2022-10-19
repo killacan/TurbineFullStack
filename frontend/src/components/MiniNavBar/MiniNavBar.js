@@ -28,27 +28,27 @@ function MiniNavBar () {
                                 <NavLink to="/">Home</NavLink>
                                 <NavLink to="/">Community Recommendations</NavLink>
                             </div> */}
-                        <li className="mini-dropdown2"><span>New & Noteworthy</span></li>
+                        {/* <li className="mini-dropdown2"><span>New & Noteworthy</span></li> */}
                             {/* <div className="mini-dropdown-content2">
                                 <NavLink to="/">Top Sellers</NavLink>
                                 <NavLink to="/">New & Trending</NavLink>
                                 <NavLink to="/">Special Offers</NavLink>
                                 <NavLink to="/">Recently Updated</NavLink>
                             </div> */}
-                        <li className="mini-dropdown3"><span>Categories</span></li>
+                        {/* <li className="mini-dropdown3"><span>Categories</span></li>
                         <li className="mini-dropdown4"><span>Points Shop</span></li>
                         <li className="mini-dropdown5"><span>News</span></li>
-                        <li className="mini-dropdown6"><span>Labs</span></li>
+                        <li className="mini-dropdown6"><span>Labs</span></li> */}
                     </ul>
                     <div className="search-spacer">
                         
                     </div>
-                    <div className="search-bar">
+                    {/* <div className="search-bar">
                         <input type="text" placeholder="Search" />
                         <div className="search-icon-holder">
                             <img id="search-icon" src={searchIcon} />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

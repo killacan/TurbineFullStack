@@ -2,6 +2,7 @@
 import csrfFetch from "./csrf";
 
 export const GET_USER = 'users/GET_USER';
+export const UPDATE_USER = 'users/UPDATE_USER'
 
 export const getUser = userId => state => {return state.users[userId]};
 
@@ -18,7 +19,7 @@ export const updateUser = (userData) => async (dispatch) => {
         body: JSON.stringify({user: userData})
     });
     const user = await res.json();
-    dispatch({ type: GET_USER, user });
+    dispatch({ type: UPDATE_USER, user });
 };
 
 const usersReducer = (state = {}, action) => {
@@ -29,6 +30,8 @@ const usersReducer = (state = {}, action) => {
         case GET_USER:
             newState[action.user.id] = action.user;
             return newState;
+        case UPDATE_USER:
+
         default:
             return state;
     }

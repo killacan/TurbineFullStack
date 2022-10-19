@@ -14,7 +14,9 @@ class Review < ApplicationRecord
 
     validates :body, presence: true
 
-    belongs_to :game
+    belongs_to :game,
+        foreign_key: :game_id,
+        class_name: :Game
 
     belongs_to :reviewer,
         foreign_key: :reviewer_id,

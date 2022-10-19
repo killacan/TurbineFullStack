@@ -24,6 +24,7 @@ import background4 from "../../assets/12.jpg";
 import background5 from "../../assets/13.jpg";
 import background6 from "../../assets/14.jpg"; 
 import background7 from "../../assets/17.jpg";
+import { getReviews, fetchReviews } from "../../store/reviews";
 
 
 // going to have to make buttons for each picture, 
@@ -36,6 +37,7 @@ function UserShowPage () {
 
     const sessionUser = useSelector(state => state.session.user);
     const { userId } = useParams();
+    const reviews = useSelector(state => state.reviews)
 
     const user = useSelector(getUser(userId));
 
@@ -92,6 +94,7 @@ function UserShowPage () {
 
     useEffect(() => {
         dispatch(fetchUser(userId));
+        dispatch(fetchReviews());
     }, []);
 
     
@@ -108,9 +111,9 @@ function UserShowPage () {
         setShowEdit(false);
     }
 
-    if (!user) return null;
+    if (!user || !reviews) return null;
 
-    // console.log(profileIcon[0])
+    console.log(Object.values(reviews))
     // console.log(profileIcon[currentIcon])
     return (
         <>
@@ -140,6 +143,19 @@ function UserShowPage () {
                         </div>
                         </>
                     }
+
+                    <div className="user-show-reviews-container">
+                    <h3 className="text">User Reviews</h3>
+                        {Object.values(reviews).map((review) => (
+                            <>
+                                {Number(review.reviewerId) === Number(userId) && 
+                                    <div className="profileReview">
+                                        <p className="prof-rev-text">{`${user.username}: `}{review.body}</p>
+                                    </div>
+                                }
+                            </>
+                        ))}
+                    </div>
                 </div>
             </div>
         </>

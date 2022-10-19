@@ -47,7 +47,7 @@ function HomePage () {
         <>
             <MiniNavBar />
             <div className="home-page-container">
-                <h2> FEATURED & RECOMMENDED</h2>
+                <h2 className="featured-text"> FEATURED & RECOMMENDED</h2>
                 <div className="featured-scrolly-box">
                     <div className="left-scrolly-arrow-holder">
                         <div className="left-scrolly-arrow" onClick={() => setCurrentFeatured((((currentFeatured - 1) + 5) % 5))}>
@@ -76,13 +76,13 @@ function HomePage () {
                 <div className="special-offers-container">
                     <div className="special-offers-text-button-holder">
                         <h2 className="special-offers-text">SPECIAL OFFERS</h2>
-                        <button className="special-offers-button">BROWSE MORE</button>
+                        {/* <button className="special-offers-button">BROWSE MORE</button> */}
                     </div>
-                    <div className="left-special-offers-arrow-holder">
+                    {/* <div className="left-special-offers-arrow-holder">
                         <div className="left-special-offers-arrow">
                             <img className="arrows" src={leftArrow} />
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="special-offers-holder">
                     {currentSpecialOffers === 0 && 
@@ -97,11 +97,11 @@ function HomePage () {
                                 <img className="img2" src={specialOffers[1].photoUrls[0]} />
                             </div>
                             </NavLink>
-                            <NavLink className="sp1-3" id="special-offers-link" to={`/games/${specialOffers[2].id}`}>
+                            {/* <NavLink className="sp1-3" id="special-offers-link" to={`/games/${specialOffers[2].id}`}>
                             <div className="box1-3">
                                 <img className="img3" src={specialOffers[2].photoUrls[0]} />
                             </div>
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink className="sp1-4" id="special-offers-link" to={`/games/${specialOffers[3].id}`}>
                             <div className="sp1-4">
                                 <img className="img4" src={specialOffers[3].photoUrls[0]} />
@@ -143,9 +143,9 @@ function HomePage () {
                         </div>}
                     </div>
 
-                    <div className="right-special-offers-arrow">
+                    {/* <div className="right-special-offers-arrow">
                         <img className="arrows" src={rightArrow} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

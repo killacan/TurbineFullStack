@@ -20,11 +20,12 @@ export const getReview = reviewId => state => {
     return state.reviews[reviewId];
 }
 
-// export const fetchReviews = () => async dispatch => {
-//     const res = await csrfFetch("/api/reviews");
-//     const reviews = await res.json();
-//     dispatch({ type: RECEIVE_REVIEWS, reviews });
-// }
+export const fetchReviews = () => async dispatch => {
+    const res = await csrfFetch("/api/reviews");
+    const reviews = await res.json();
+    console.log(reviews)
+    dispatch({ type: RECEIVE_REVIEWS, reviews });
+}
 
 // export const fetchReview = reviewId => async dispatch => {
 //     const res = await csrfFetch(`/api/reviews/${reviewId}`);
