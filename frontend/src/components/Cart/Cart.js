@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import MiniNavBar from '../MiniNavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartItems, getCartItems, destroyCartItem } from '../../store/carts';
@@ -7,6 +7,10 @@ import { deleteGame, fetchGames } from '../../store/games';
 
 function Cart () {
     const dispatch = useDispatch();
+
+    const sessionUser = useSelector(state => state.session.user)
+
+    
 
     const cartData = useSelector(state => state.carts);
 
@@ -25,10 +29,10 @@ function Cart () {
     }
     
     // console.log(cartItems, "cart items");
-
+    if (!sessionUser) return <Redirect to='/login' />
     if (!cartData) return null;
     
-    console.log(Object.values(cartData).forEach((cart_cost) => totalCost += cart_cost.price), "cartData");
+    // console.log(Object.values(cartData).forEach((cart_cost) => totalCost += cart_cost.price), "cartData");
     // console.log(totalCost, "totalCost");
 
     return (

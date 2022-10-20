@@ -26,7 +26,7 @@ function ProfileButton({ user }) {
 
   useEffect(() => {
     setSessionIcon(sessionUser.profilePicUrl)
-    console.log(sessionUser)
+    // console.log(sessionUser)
   }, [sessionUser])
 
   const openMenu = () => {

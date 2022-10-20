@@ -23,7 +23,7 @@ export const getReview = reviewId => state => {
 export const fetchReviews = () => async dispatch => {
     const res = await csrfFetch("/api/reviews");
     const reviews = await res.json();
-    console.log(reviews)
+    // console.log(reviews)
     dispatch({ type: RECEIVE_REVIEWS, reviews });
 }
 
