@@ -52,13 +52,6 @@ function UserShowPage () {
     if (currentIcon === "" ) {
         // console.log(currentIcon, "its a string!")
         setCurrentIcon(0)
-        // dispatch(updateUser({
-        //     id: user.id,
-        //     email: user.email,
-        //     username: user.username,
-        //     bio: user.bio,
-        //     profilePicUrl: currentIcon
-        // }))
     }
 
     useEffect(() => {
