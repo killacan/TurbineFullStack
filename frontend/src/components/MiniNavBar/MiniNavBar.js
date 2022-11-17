@@ -3,15 +3,22 @@ import searchIcon from "../../assets/searchDarkBlue.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems } from "../../store/carts";
 import { useEffect } from "react";
+import { useState } from "react";
 
 function MiniNavBar () {
     const dispatch = useDispatch();
 
     const cartData = useSelector(state => state.carts);
+    const [searchQuery, setSearchQuery] = useState("")
 
     useEffect(() => {
         dispatch(fetchCartItems());
     }, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Its Working!")
+    }
 
     if (!cartData) return null;
     
@@ -43,12 +50,14 @@ function MiniNavBar () {
                     <div className="search-spacer">
                         
                     </div>
-                    {/* <div className="search-bar">
-                        <input type="text" placeholder="Search" />
-                        <div className="search-icon-holder">
+                    <div className="search-bar">
+                        <form onSubmit={handleSubmit} >
+                            <input type="text" placeholder="Search" onChange={e => setSearchQuery(e.target.value)} />
+                        <div className="search-icon-holder" onClick={handleSubmit}>
                             <img id="search-icon" src={searchIcon} />
                         </div>
-                    </div> */}
+                        </form>
+                    </div>
                 </div>
             </div>
         </>
