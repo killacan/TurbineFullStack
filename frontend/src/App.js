@@ -9,6 +9,7 @@ import GameShowPage from "./components/GameShowPage";
 import UserShowPage from "./components/UserShowPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Cart from "./components/Cart"
+import SearchPage from './components/SearchPage';
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
           <Route path={`/cart`}>
             <ScrollToTop />
             <Cart />
+          </Route>
+          <Route path={`/search/:searchTerm`}>
+            <ScrollToTop />
+            <SearchPage />
           </Route>
           <Route path="*">
             <h1>404</h1>

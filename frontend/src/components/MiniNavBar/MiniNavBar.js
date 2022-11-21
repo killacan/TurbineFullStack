@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect, Router, Navigate } from "react-router-dom";
 import searchIcon from "../../assets/searchDarkBlue.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems } from "../../store/carts";
@@ -17,7 +17,8 @@ function MiniNavBar () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Its Working!")
+        console.log(searchQuery, "Its Working!")
+        history
     }
 
     if (!cartData) return null;
